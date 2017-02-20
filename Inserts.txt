@@ -1,0 +1,91 @@
+INSERT INTO Paciente (Nombre,ApellidoPaterno,ApellidoMaterno,DNI,Edad,Sexo,Peso,Estado)
+VALUES ('Juan','Guibo','Higa','73772672','23','1','91.2','2');
+
+
+INSERT INTO Paciente (Nombre,ApellidoPaterno,ApellidoMaterno,DNI,Edad,Sexo,Peso,Estado)
+VALUES ('Carlos','Miyashiro','Higa','73772674','23','1','91.2','2');
+
+INSERT INTO Protocolo (NombreProtocolo)
+VALUES ('Protocolo1');
+
+
+INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
+VALUES ('MaterialA','200 UNIDADES',22,32.4);
+
+INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
+VALUES ('MaterialB','35 UNIDADES',11,32.4);
+
+INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
+VALUES ('MaterialC','64 UNIDADES',33,345.4);
+
+INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
+VALUES ('MaterialD','77 UNIDADES',44,332.4);
+
+
+INSERT INTO Preparado(NombrePreparado,Preparacion)
+VALUES ('Preparado1','Receta de Preparacion');
+
+INSERT INTO Preparado(NombrePreparado,Preparacion)
+VALUES ('Preparado2','Receta de Preparacion');
+
+
+INSERT INTO Preparado(NombrePreparado,Preparacion)
+VALUES ('Preparado3','Receta de Preparacion');
+
+
+INSERT INTO Preparado(NombrePreparado,Preparacion)
+VALUES ('Preparado4','Receta de Preparacion');
+
+
+INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
+VALUES ('1','1','50');
+
+INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
+VALUES ('2','1','244');
+
+
+INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
+VALUES ('3','1','55');
+
+
+
+INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
+VALUES ('4','1','90');
+
+INSERT INTO ProtocoloxPreparado(IDProtocolo,IDPreparado)
+VALUES ('1','1');
+
+
+INSERT INTO GuiaContingencia(TipoGuia,Descripcion)
+VALUES ('1','Guia para Paros Cardiacos');
+
+INSERT INTO GuiaContingencia(TipoGuia,Descripcion)
+VALUES ('2','Guia para Oncologia');
+
+INSERT INTO HistoriaClinica(Antecedentes,Padecimiento,IDPaciente)
+VALUES ('Diabetes familiar','Cancer al Pulmon','2');
+
+INSERT INTO HistoriaClinica(Antecedentes,Padecimiento,IDPaciente)
+VALUES ('Diabetes familiar','Cancer','1');
+
+
+INSERT INTO DetalleHistoriaClinica(FechaConsulta,Motivo,IDHistoriaClinica)
+VALUES (GETDATE(),'Molestias en el pulmon','1');
+
+INSERT INTO DetalleHistoriaClinica(FechaConsulta,Motivo,IDHistoriaClinica)
+VALUES (GETDATE(),'Molestias','2');
+
+
+INSERT INTO Empleado(Nombre,Apellido,Turno,TipoEmpleado)
+VALUES ('Pepito','Salasar','1','1');
+
+
+INSERT INTO FichaTratamiento(EstadoFicha,NroSesiones,IntervaloSesion,Diagnostico,PlanAlimentacion,EscalaActividad,IDDetalleHistoriaClinica,IDEmpleado)
+VALUES ('Registrado','24','3','Cancer Pulmonar','Plan de alimentacion 1','1-20','1','1');
+
+INSERT INTO HojaPreparacion(FechaPreparacion,EstadoHoja,CantidadResiduos,IDProtocolo)
+VALUES (GETDATE(),'Generada','23','1');
+
+
+INSERT INTO DetalleFichaTratamiento(Observaciones,FechaSesion,NroSesion,EstadoPaciente,IDFichaTratamiento,IDGuiaContingencia,IDHojaPreparacion)
+VALUES ('No hay Observaciones',GETDATE(),'1','Bueno','1','1','1');
