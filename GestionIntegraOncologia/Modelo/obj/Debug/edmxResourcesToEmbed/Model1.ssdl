@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OncologiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Contenedor">
+    <Key>
+      <PropertyRef Name="IDContenedor" />
+    </Key>
+    <Property Name="IDContenedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaSalida" Type="datetime" Nullable="false" />
+    <Property Name="Observacion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="EstadoContenedor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IDFichaTratamiento" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContenedorXOrdenTransporte">
+    <Key>
+      <PropertyRef Name="IDOrdenTransporte" />
+      <PropertyRef Name="IDContenedor" />
+    </Key>
+    <Property Name="IDOrdenTransporte" Type="int" Nullable="false" />
+    <Property Name="IDContenedor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleFichaTratamiento">
+    <Key>
+      <PropertyRef Name="IDDetalleFichaTratamiento" />
+    </Key>
+    <Property Name="IDDetalleFichaTratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Observaciones" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="FechaSesion" Type="datetime" Nullable="false" />
+    <Property Name="NroSesion" Type="int" Nullable="false" />
+    <Property Name="EstadoPaciente" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IDFichaTratamiento" Type="int" Nullable="false" />
+    <Property Name="IDGuiaContingencia" Type="int" Nullable="false" />
+    <Property Name="IDHojaPreparacion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleHistoriaClinica">
+    <Key>
+      <PropertyRef Name="IDDetalleHistoriaClinica" />
+    </Key>
+    <Property Name="IDDetalleHistoriaClinica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaConsulta" Type="datetime" Nullable="false" />
+    <Property Name="Motivo" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IDHistoriaClinica" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleHojaPreparacion">
+    <Key>
+      <PropertyRef Name="IDHojaPreparacion" />
+      <PropertyRef Name="IDEmpleado" />
+    </Key>
+    <Property Name="IDHojaPreparacion" Type="int" Nullable="false" />
+    <Property Name="IDEmpleado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="IDEmpleado" />
+    </Key>
+    <Property Name="IDEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Turno" Type="int" Nullable="false" />
+    <Property Name="TipoEmpleado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpresaTransporte">
+    <Key>
+      <PropertyRef Name="IDEmpresa" />
+    </Key>
+    <Property Name="IDEmpresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Telefono" Type="int" Nullable="false" />
+    <Property Name="RUC" Type="int" Nullable="false" />
+    <Property Name="NroObservaciones" Type="int" Nullable="false" />
+    <Property Name="FechaInicioActividades" Type="datetime" Nullable="false" />
+    <Property Name="CostoViaje" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FichaTratamiento">
+    <Key>
+      <PropertyRef Name="IDFichaTratamiento" />
+    </Key>
+    <Property Name="IDFichaTratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstadoFicha" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="NroSesiones" Type="int" Nullable="false" />
+    <Property Name="IntervaloSesion" Type="int" Nullable="false" />
+    <Property Name="Diagnostico" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="PlanAlimentacion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="EscalaActividad" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IDDetalleHistoriaClinica" Type="int" Nullable="false" />
+    <Property Name="IDEmpleado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GuiaContingencia">
+    <Key>
+      <PropertyRef Name="IDGuiaContingencia" />
+    </Key>
+    <Property Name="IDGuiaContingencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoGuia" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistoriaClinica">
+    <Key>
+      <PropertyRef Name="IDHistoriaClinica" />
+    </Key>
+    <Property Name="IDHistoriaClinica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Antecedentes" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Padecimiento" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IDPaciente" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HojaPreparacion">
+    <Key>
+      <PropertyRef Name="IDHojaPreparacion" />
+    </Key>
+    <Property Name="IDHojaPreparacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaPreparacion" Type="datetime" Nullable="false" />
+    <Property Name="EstadoHoja" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CantidadResiduos" Type="int" Nullable="false" />
+    <Property Name="IDProtocolo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Material">
+    <Key>
+      <PropertyRef Name="IDMaterial" />
+    </Key>
+    <Property Name="IDMaterial" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Presentacion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Volumen" Type="float" Nullable="false" />
+    <Property Name="Peso" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MaterialxPreparado">
+    <Key>
+      <PropertyRef Name="IDMaterial" />
+      <PropertyRef Name="IDPreparado" />
+    </Key>
+    <Property Name="IDMaterial" Type="int" Nullable="false" />
+    <Property Name="IDPreparado" Type="int" Nullable="false" />
+    <Property Name="Dosis" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrdenTransporte">
+    <Key>
+      <PropertyRef Name="IDOrdenTransporte" />
+    </Key>
+    <Property Name="IDOrdenTransporte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaTransporte" Type="datetime" Nullable="false" />
+    <Property Name="NumeroContenedores" Type="int" Nullable="false" />
+    <Property Name="Comentario" Type="varchar" MaxLength="50" />
+    <Property Name="IDEmpresa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="IDPaciente" />
+    </Key>
+    <Property Name="IDPaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ApellidoPaterno" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ApellidoMaterno" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DNI" Type="int" Nullable="false" />
+    <Property Name="Edad" Type="int" Nullable="false" />
+    <Property Name="Sexo" Type="int" Nullable="false" />
+    <Property Name="Peso" Type="float" Nullable="false" />
+    <Property Name="Estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Preparado">
+    <Key>
+      <PropertyRef Name="IDPreparado" />
+    </Key>
+    <Property Name="IDPreparado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombrePreparado" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Preparacion" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Protocolo">
+    <Key>
+      <PropertyRef Name="IDProtocolo" />
+    </Key>
+    <Property Name="IDProtocolo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreProtocolo" Type="varchar" MaxLength="400" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProtocoloxPreparado">
+    <Key>
+      <PropertyRef Name="IDProtocolo" />
+      <PropertyRef Name="IDPreparado" />
+    </Key>
+    <Property Name="IDProtocolo" Type="int" Nullable="false" />
+    <Property Name="IDPreparado" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_ContenedorXOrdenTransporte1">
+    <End Role="OrdenTransporte" Type="Self.OrdenTransporte" Multiplicity="1" />
+    <End Role="ContenedorXOrdenTransporte" Type="Self.ContenedorXOrdenTransporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrdenTransporte">
+        <PropertyRef Name="IDOrdenTransporte" />
+      </Principal>
+      <Dependent Role="ContenedorXOrdenTransporte">
+        <PropertyRef Name="IDOrdenTransporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ContenedorXOrdenTransporte2">
+    <End Role="Contenedor" Type="Self.Contenedor" Multiplicity="1" />
+    <End Role="ContenedorXOrdenTransporte" Type="Self.ContenedorXOrdenTransporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contenedor">
+        <PropertyRef Name="IDContenedor" />
+      </Principal>
+      <Dependent Role="ContenedorXOrdenTransporte">
+        <PropertyRef Name="IDContenedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ContenedorXOrdenTransporte3">
+    <End Role="ContenedorXOrdenTransporte" Type="Self.ContenedorXOrdenTransporte" Multiplicity="1" />
+    <End Role="ContenedorXOrdenTransporte1" Type="Self.ContenedorXOrdenTransporte" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ContenedorXOrdenTransporte">
+        <PropertyRef Name="IDOrdenTransporte" />
+        <PropertyRef Name="IDContenedor" />
+      </Principal>
+      <Dependent Role="ContenedorXOrdenTransporte1">
+        <PropertyRef Name="IDOrdenTransporte" />
+        <PropertyRef Name="IDContenedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ContFicha">
+    <End Role="FichaTratamiento" Type="Self.FichaTratamiento" Multiplicity="1" />
+    <End Role="Contenedor" Type="Self.Contenedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaTratamiento">
+        <PropertyRef Name="IDFichaTratamiento" />
+      </Principal>
+      <Dependent Role="Contenedor">
+        <PropertyRef Name="IDFichaTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleHistoriaClinica">
+    <End Role="HistoriaClinica" Type="Self.HistoriaClinica" Multiplicity="1" />
+    <End Role="DetalleHistoriaClinica" Type="Self.DetalleHistoriaClinica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistoriaClinica">
+        <PropertyRef Name="IDHistoriaClinica" />
+      </Principal>
+      <Dependent Role="DetalleHistoriaClinica">
+        <PropertyRef Name="IDHistoriaClinica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleHojaPreparacion1">
+    <End Role="HojaPreparacion" Type="Self.HojaPreparacion" Multiplicity="1" />
+    <End Role="DetalleHojaPreparacion" Type="Self.DetalleHojaPreparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HojaPreparacion">
+        <PropertyRef Name="IDHojaPreparacion" />
+      </Principal>
+      <Dependent Role="DetalleHojaPreparacion">
+        <PropertyRef Name="IDHojaPreparacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetalleHojaPreparacion2">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="DetalleHojaPreparacion" Type="Self.DetalleHojaPreparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IDEmpleado" />
+      </Principal>
+      <Dependent Role="DetalleHojaPreparacion">
+        <PropertyRef Name="IDEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetFicTratFichaTrat">
+    <End Role="FichaTratamiento" Type="Self.FichaTratamiento" Multiplicity="1" />
+    <End Role="DetalleFichaTratamiento" Type="Self.DetalleFichaTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FichaTratamiento">
+        <PropertyRef Name="IDFichaTratamiento" />
+      </Principal>
+      <Dependent Role="DetalleFichaTratamiento">
+        <PropertyRef Name="IDFichaTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetFicTratGuiaCont">
+    <End Role="GuiaContingencia" Type="Self.GuiaContingencia" Multiplicity="1" />
+    <End Role="DetalleFichaTratamiento" Type="Self.DetalleFichaTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GuiaContingencia">
+        <PropertyRef Name="IDGuiaContingencia" />
+      </Principal>
+      <Dependent Role="DetalleFichaTratamiento">
+        <PropertyRef Name="IDGuiaContingencia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetFicTratHojaPrepa">
+    <End Role="HojaPreparacion" Type="Self.HojaPreparacion" Multiplicity="1" />
+    <End Role="DetalleFichaTratamiento" Type="Self.DetalleFichaTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HojaPreparacion">
+        <PropertyRef Name="IDHojaPreparacion" />
+      </Principal>
+      <Dependent Role="DetalleFichaTratamiento">
+        <PropertyRef Name="IDHojaPreparacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FichTraDetallHistCli">
+    <End Role="HistoriaClinica" Type="Self.HistoriaClinica" Multiplicity="1" />
+    <End Role="FichaTratamiento" Type="Self.FichaTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HistoriaClinica">
+        <PropertyRef Name="IDHistoriaClinica" />
+      </Principal>
+      <Dependent Role="FichaTratamiento">
+        <PropertyRef Name="IDDetalleHistoriaClinica" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_FichTraEmpleado">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="FichaTratamiento" Type="Self.FichaTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IDEmpleado" />
+      </Principal>
+      <Dependent Role="FichaTratamiento">
+        <PropertyRef Name="IDEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_HistClinPaci">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+    <End Role="HistoriaClinica" Type="Self.HistoriaClinica" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="IDPaciente" />
+      </Principal>
+      <Dependent Role="HistoriaClinica">
+        <PropertyRef Name="IDPaciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_HojaProtocolo">
+    <End Role="Protocolo" Type="Self.Protocolo" Multiplicity="1" />
+    <End Role="HojaPreparacion" Type="Self.HojaPreparacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Protocolo">
+        <PropertyRef Name="IDProtocolo" />
+      </Principal>
+      <Dependent Role="HojaPreparacion">
+        <PropertyRef Name="IDProtocolo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MaterialxPreparado1">
+    <End Role="Material" Type="Self.Material" Multiplicity="1" />
+    <End Role="MaterialxPreparado" Type="Self.MaterialxPreparado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Material">
+        <PropertyRef Name="IDMaterial" />
+      </Principal>
+      <Dependent Role="MaterialxPreparado">
+        <PropertyRef Name="IDMaterial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MaterialxPreparado2">
+    <End Role="Preparado" Type="Self.Preparado" Multiplicity="1" />
+    <End Role="MaterialxPreparado" Type="Self.MaterialxPreparado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Preparado">
+        <PropertyRef Name="IDPreparado" />
+      </Principal>
+      <Dependent Role="MaterialxPreparado">
+        <PropertyRef Name="IDPreparado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_OrdTransEmpr">
+    <End Role="EmpresaTransporte" Type="Self.EmpresaTransporte" Multiplicity="1" />
+    <End Role="OrdenTransporte" Type="Self.OrdenTransporte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpresaTransporte">
+        <PropertyRef Name="IDEmpresa" />
+      </Principal>
+      <Dependent Role="OrdenTransporte">
+        <PropertyRef Name="IDEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProtocoloxPreparado1">
+    <End Role="Protocolo" Type="Self.Protocolo" Multiplicity="1" />
+    <End Role="ProtocoloxPreparado" Type="Self.ProtocoloxPreparado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Protocolo">
+        <PropertyRef Name="IDProtocolo" />
+      </Principal>
+      <Dependent Role="ProtocoloxPreparado">
+        <PropertyRef Name="IDProtocolo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProtocoloxPreparado2">
+    <End Role="Preparado" Type="Self.Preparado" Multiplicity="1" />
+    <End Role="ProtocoloxPreparado" Type="Self.ProtocoloxPreparado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Preparado">
+        <PropertyRef Name="IDPreparado" />
+      </Principal>
+      <Dependent Role="ProtocoloxPreparado">
+        <PropertyRef Name="IDPreparado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProtocoloxPreparado3">
+    <End Role="ProtocoloxPreparado" Type="Self.ProtocoloxPreparado" Multiplicity="1" />
+    <End Role="ProtocoloxPreparado1" Type="Self.ProtocoloxPreparado" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ProtocoloxPreparado">
+        <PropertyRef Name="IDProtocolo" />
+        <PropertyRef Name="IDPreparado" />
+      </Principal>
+      <Dependent Role="ProtocoloxPreparado1">
+        <PropertyRef Name="IDProtocolo" />
+        <PropertyRef Name="IDPreparado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OncologiaModelStoreContainer">
+    <EntitySet Name="Contenedor" EntityType="Self.Contenedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContenedorXOrdenTransporte" EntityType="Self.ContenedorXOrdenTransporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleFichaTratamiento" EntityType="Self.DetalleFichaTratamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleHistoriaClinica" EntityType="Self.DetalleHistoriaClinica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleHojaPreparacion" EntityType="Self.DetalleHojaPreparacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpresaTransporte" EntityType="Self.EmpresaTransporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FichaTratamiento" EntityType="Self.FichaTratamiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuiaContingencia" EntityType="Self.GuiaContingencia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistoriaClinica" EntityType="Self.HistoriaClinica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HojaPreparacion" EntityType="Self.HojaPreparacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaterialxPreparado" EntityType="Self.MaterialxPreparado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrdenTransporte" EntityType="Self.OrdenTransporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paciente" EntityType="Self.Paciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Preparado" EntityType="Self.Preparado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Protocolo" EntityType="Self.Protocolo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProtocoloxPreparado" EntityType="Self.ProtocoloxPreparado" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_ContenedorXOrdenTransporte1" Association="Self.fk_ContenedorXOrdenTransporte1">
+      <End Role="OrdenTransporte" EntitySet="OrdenTransporte" />
+      <End Role="ContenedorXOrdenTransporte" EntitySet="ContenedorXOrdenTransporte" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ContenedorXOrdenTransporte2" Association="Self.fk_ContenedorXOrdenTransporte2">
+      <End Role="Contenedor" EntitySet="Contenedor" />
+      <End Role="ContenedorXOrdenTransporte" EntitySet="ContenedorXOrdenTransporte" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ContenedorXOrdenTransporte3" Association="Self.fk_ContenedorXOrdenTransporte3">
+      <End Role="ContenedorXOrdenTransporte" EntitySet="ContenedorXOrdenTransporte" />
+      <End Role="ContenedorXOrdenTransporte1" EntitySet="ContenedorXOrdenTransporte" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ContFicha" Association="Self.fk_ContFicha">
+      <End Role="FichaTratamiento" EntitySet="FichaTratamiento" />
+      <End Role="Contenedor" EntitySet="Contenedor" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleHistoriaClinica" Association="Self.fk_DetalleHistoriaClinica">
+      <End Role="HistoriaClinica" EntitySet="HistoriaClinica" />
+      <End Role="DetalleHistoriaClinica" EntitySet="DetalleHistoriaClinica" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleHojaPreparacion1" Association="Self.fk_DetalleHojaPreparacion1">
+      <End Role="HojaPreparacion" EntitySet="HojaPreparacion" />
+      <End Role="DetalleHojaPreparacion" EntitySet="DetalleHojaPreparacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetalleHojaPreparacion2" Association="Self.fk_DetalleHojaPreparacion2">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="DetalleHojaPreparacion" EntitySet="DetalleHojaPreparacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetFicTratFichaTrat" Association="Self.fk_DetFicTratFichaTrat">
+      <End Role="FichaTratamiento" EntitySet="FichaTratamiento" />
+      <End Role="DetalleFichaTratamiento" EntitySet="DetalleFichaTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetFicTratGuiaCont" Association="Self.fk_DetFicTratGuiaCont">
+      <End Role="GuiaContingencia" EntitySet="GuiaContingencia" />
+      <End Role="DetalleFichaTratamiento" EntitySet="DetalleFichaTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetFicTratHojaPrepa" Association="Self.fk_DetFicTratHojaPrepa">
+      <End Role="HojaPreparacion" EntitySet="HojaPreparacion" />
+      <End Role="DetalleFichaTratamiento" EntitySet="DetalleFichaTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FichTraDetallHistCli" Association="Self.fk_FichTraDetallHistCli">
+      <End Role="HistoriaClinica" EntitySet="HistoriaClinica" />
+      <End Role="FichaTratamiento" EntitySet="FichaTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_FichTraEmpleado" Association="Self.fk_FichTraEmpleado">
+      <End Role="Empleado" EntitySet="Empleado" />
+      <End Role="FichaTratamiento" EntitySet="FichaTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_HistClinPaci" Association="Self.fk_HistClinPaci">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="HistoriaClinica" EntitySet="HistoriaClinica" />
+    </AssociationSet>
+    <AssociationSet Name="fk_HojaProtocolo" Association="Self.fk_HojaProtocolo">
+      <End Role="Protocolo" EntitySet="Protocolo" />
+      <End Role="HojaPreparacion" EntitySet="HojaPreparacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MaterialxPreparado1" Association="Self.fk_MaterialxPreparado1">
+      <End Role="Material" EntitySet="Material" />
+      <End Role="MaterialxPreparado" EntitySet="MaterialxPreparado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MaterialxPreparado2" Association="Self.fk_MaterialxPreparado2">
+      <End Role="Preparado" EntitySet="Preparado" />
+      <End Role="MaterialxPreparado" EntitySet="MaterialxPreparado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_OrdTransEmpr" Association="Self.fk_OrdTransEmpr">
+      <End Role="EmpresaTransporte" EntitySet="EmpresaTransporte" />
+      <End Role="OrdenTransporte" EntitySet="OrdenTransporte" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProtocoloxPreparado1" Association="Self.fk_ProtocoloxPreparado1">
+      <End Role="Protocolo" EntitySet="Protocolo" />
+      <End Role="ProtocoloxPreparado" EntitySet="ProtocoloxPreparado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProtocoloxPreparado2" Association="Self.fk_ProtocoloxPreparado2">
+      <End Role="Preparado" EntitySet="Preparado" />
+      <End Role="ProtocoloxPreparado" EntitySet="ProtocoloxPreparado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProtocoloxPreparado3" Association="Self.fk_ProtocoloxPreparado3">
+      <End Role="ProtocoloxPreparado" EntitySet="ProtocoloxPreparado" />
+      <End Role="ProtocoloxPreparado1" EntitySet="ProtocoloxPreparado" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

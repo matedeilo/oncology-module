@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OncologiaModelStoreContainer" CdmEntityContainer="OncologiaEntities">
+    <EntitySetMapping Name="Contenedor">
+      <EntityTypeMapping TypeName="OncologiaModel.Contenedor">
+        <MappingFragment StoreEntitySet="Contenedor">
+          <ScalarProperty Name="IDContenedor" ColumnName="IDContenedor" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="EstadoContenedor" ColumnName="EstadoContenedor" />
+          <ScalarProperty Name="IDFichaTratamiento" ColumnName="IDFichaTratamiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContenedorXOrdenTransporte">
+      <EntityTypeMapping TypeName="OncologiaModel.ContenedorXOrdenTransporte">
+        <MappingFragment StoreEntitySet="ContenedorXOrdenTransporte">
+          <ScalarProperty Name="IDOrdenTransporte" ColumnName="IDOrdenTransporte" />
+          <ScalarProperty Name="IDContenedor" ColumnName="IDContenedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleFichaTratamiento">
+      <EntityTypeMapping TypeName="OncologiaModel.DetalleFichaTratamiento">
+        <MappingFragment StoreEntitySet="DetalleFichaTratamiento">
+          <ScalarProperty Name="IDDetalleFichaTratamiento" ColumnName="IDDetalleFichaTratamiento" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="FechaSesion" ColumnName="FechaSesion" />
+          <ScalarProperty Name="NroSesion" ColumnName="NroSesion" />
+          <ScalarProperty Name="EstadoPaciente" ColumnName="EstadoPaciente" />
+          <ScalarProperty Name="IDFichaTratamiento" ColumnName="IDFichaTratamiento" />
+          <ScalarProperty Name="IDGuiaContingencia" ColumnName="IDGuiaContingencia" />
+          <ScalarProperty Name="IDHojaPreparacion" ColumnName="IDHojaPreparacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleHistoriaClinica">
+      <EntityTypeMapping TypeName="OncologiaModel.DetalleHistoriaClinica">
+        <MappingFragment StoreEntitySet="DetalleHistoriaClinica">
+          <ScalarProperty Name="IDDetalleHistoriaClinica" ColumnName="IDDetalleHistoriaClinica" />
+          <ScalarProperty Name="FechaConsulta" ColumnName="FechaConsulta" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="IDHistoriaClinica" ColumnName="IDHistoriaClinica" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="OncologiaModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Turno" ColumnName="Turno" />
+          <ScalarProperty Name="TipoEmpleado" ColumnName="TipoEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpresaTransporte">
+      <EntityTypeMapping TypeName="OncologiaModel.EmpresaTransporte">
+        <MappingFragment StoreEntitySet="EmpresaTransporte">
+          <ScalarProperty Name="IDEmpresa" ColumnName="IDEmpresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="NroObservaciones" ColumnName="NroObservaciones" />
+          <ScalarProperty Name="FechaInicioActividades" ColumnName="FechaInicioActividades" />
+          <ScalarProperty Name="CostoViaje" ColumnName="CostoViaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FichaTratamiento">
+      <EntityTypeMapping TypeName="OncologiaModel.FichaTratamiento">
+        <MappingFragment StoreEntitySet="FichaTratamiento">
+          <ScalarProperty Name="IDFichaTratamiento" ColumnName="IDFichaTratamiento" />
+          <ScalarProperty Name="EstadoFicha" ColumnName="EstadoFicha" />
+          <ScalarProperty Name="NroSesiones" ColumnName="NroSesiones" />
+          <ScalarProperty Name="IntervaloSesion" ColumnName="IntervaloSesion" />
+          <ScalarProperty Name="Diagnostico" ColumnName="Diagnostico" />
+          <ScalarProperty Name="PlanAlimentacion" ColumnName="PlanAlimentacion" />
+          <ScalarProperty Name="EscalaActividad" ColumnName="EscalaActividad" />
+          <ScalarProperty Name="IDDetalleHistoriaClinica" ColumnName="IDDetalleHistoriaClinica" />
+          <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuiaContingencia">
+      <EntityTypeMapping TypeName="OncologiaModel.GuiaContingencia">
+        <MappingFragment StoreEntitySet="GuiaContingencia">
+          <ScalarProperty Name="IDGuiaContingencia" ColumnName="IDGuiaContingencia" />
+          <ScalarProperty Name="TipoGuia" ColumnName="TipoGuia" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoriaClinica">
+      <EntityTypeMapping TypeName="OncologiaModel.HistoriaClinica">
+        <MappingFragment StoreEntitySet="HistoriaClinica">
+          <ScalarProperty Name="IDHistoriaClinica" ColumnName="IDHistoriaClinica" />
+          <ScalarProperty Name="Antecedentes" ColumnName="Antecedentes" />
+          <ScalarProperty Name="Padecimiento" ColumnName="Padecimiento" />
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HojaPreparacion">
+      <EntityTypeMapping TypeName="OncologiaModel.HojaPreparacion">
+        <MappingFragment StoreEntitySet="HojaPreparacion">
+          <ScalarProperty Name="IDHojaPreparacion" ColumnName="IDHojaPreparacion" />
+          <ScalarProperty Name="FechaPreparacion" ColumnName="FechaPreparacion" />
+          <ScalarProperty Name="EstadoHoja" ColumnName="EstadoHoja" />
+          <ScalarProperty Name="CantidadResiduos" ColumnName="CantidadResiduos" />
+          <ScalarProperty Name="IDProtocolo" ColumnName="IDProtocolo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Material">
+      <EntityTypeMapping TypeName="OncologiaModel.Material">
+        <MappingFragment StoreEntitySet="Material">
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Presentacion" ColumnName="Presentacion" />
+          <ScalarProperty Name="Volumen" ColumnName="Volumen" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaterialxPreparado">
+      <EntityTypeMapping TypeName="OncologiaModel.MaterialxPreparado">
+        <MappingFragment StoreEntitySet="MaterialxPreparado">
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="IDPreparado" ColumnName="IDPreparado" />
+          <ScalarProperty Name="Dosis" ColumnName="Dosis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenTransporte">
+      <EntityTypeMapping TypeName="OncologiaModel.OrdenTransporte">
+        <MappingFragment StoreEntitySet="OrdenTransporte">
+          <ScalarProperty Name="IDOrdenTransporte" ColumnName="IDOrdenTransporte" />
+          <ScalarProperty Name="FechaTransporte" ColumnName="FechaTransporte" />
+          <ScalarProperty Name="NumeroContenedores" ColumnName="NumeroContenedores" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="IDEmpresa" ColumnName="IDEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paciente">
+      <EntityTypeMapping TypeName="OncologiaModel.Paciente">
+        <MappingFragment StoreEntitySet="Paciente">
+          <ScalarProperty Name="IDPaciente" ColumnName="IDPaciente" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Preparado">
+      <EntityTypeMapping TypeName="OncologiaModel.Preparado">
+        <MappingFragment StoreEntitySet="Preparado">
+          <ScalarProperty Name="IDPreparado" ColumnName="IDPreparado" />
+          <ScalarProperty Name="NombrePreparado" ColumnName="NombrePreparado" />
+          <ScalarProperty Name="Preparacion" ColumnName="Preparacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Protocolo">
+      <EntityTypeMapping TypeName="OncologiaModel.Protocolo">
+        <MappingFragment StoreEntitySet="Protocolo">
+          <ScalarProperty Name="IDProtocolo" ColumnName="IDProtocolo" />
+          <ScalarProperty Name="NombreProtocolo" ColumnName="NombreProtocolo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProtocoloxPreparado">
+      <EntityTypeMapping TypeName="OncologiaModel.ProtocoloxPreparado">
+        <MappingFragment StoreEntitySet="ProtocoloxPreparado">
+          <ScalarProperty Name="IDProtocolo" ColumnName="IDProtocolo" />
+          <ScalarProperty Name="IDPreparado" ColumnName="IDPreparado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DetalleHojaPreparacion" TypeName="OncologiaModel.DetalleHojaPreparacion" StoreEntitySet="DetalleHojaPreparacion">
+      <EndProperty Name="HojaPreparacion">
+        <ScalarProperty Name="IDHojaPreparacion" ColumnName="IDHojaPreparacion" />
+      </EndProperty>
+      <EndProperty Name="Empleado">
+        <ScalarProperty Name="IDEmpleado" ColumnName="IDEmpleado" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,39 @@
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.dll
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\obj\Debug\Controller.csprojResolveAssemblyReference.cache
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.dll
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.dll
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\log4net.dll
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.dll
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.dll
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\log4net.xml
+C:\Users\JuanJosé\Desktop\Proyecto Oncologia\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.xml
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.dll
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.pdb
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.dll
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\log4net.dll
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.dll
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.dll
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.pdb
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.pdb
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\log4net.xml
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.xml
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\obj\Debug\Controller.csprojResolveAssemblyReference.cache
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.dll
+C:\Users\JuanJosé\Desktop\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.dll
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.dll
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\log4net.dll
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.dll
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.dll
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\log4net.xml
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.xml
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controller.csprojResolveAssemblyReference.cache
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.dll
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.pdb

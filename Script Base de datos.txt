@@ -1,0 +1,408 @@
+USE master
+GO
+
+CREATE DATABASE Oncologia
+
+
+USE Oncologia
+GO
+
+--Creación de las tablas
+
+--Creacion de la tabla Contenedor
+CREATE TABLE Contenedor(
+IDContenedor int IDENTITY(1,1) NOT NULL,
+FechaSalida Datetime NOT NULL,
+Observacion VARCHAR(200)NOT NULL,
+EstadoContenedor VARCHAR(50) NOT NULL,
+IDFichaTratamiento int  NOT NULL
+)
+
+--Creacion de la tabla DetalleFichaTratamiento
+CREATE TABLE DetalleFichaTratamiento(
+IDDetalleFichaTratamiento int IDENTITY(1,1) NOT NULL,
+Observaciones VARCHAR(200)NOT NULL,
+FechaSesion Datetime NOT NULL,
+NroSesion int NOT NULL,
+EstadoPaciente VARCHAR(60) NOT NULL,
+IDFichaTratamiento  int NOT NULL,
+IDGuiaContingencia int NOT NULL,
+IDHojaPreparacion int  NOT NULL
+)
+
+--Creacion de la tabla GuiaContingencia
+CREATE TABLE GuiaContingencia(
+IDGuiaContingencia int IDENTITY(1,1) NOT NULL,
+TipoGuia int NOT NULL,
+Descripcion VARCHAR(200) NOT NULL
+)
+
+--Creacion de la tabla DetalleHistoriaClinica
+CREATE TABLE DetalleHistoriaClinica(
+IDDetalleHistoriaClinica int IDENTITY(1,1) NOT NULL,
+FechaConsulta Datetime NOT NULL,
+Motivo VARCHAR(200) NOT NULL,
+IDHistoriaClinica int NOT NULL
+)
+
+--Creacion de la tabla Empleado
+CREATE TABLE Empleado(
+IDEmpleado int IDENTITY(1,1) NOT NULL,
+Nombre VARCHAR(200) NOT NULL,
+Apellido VARCHAR(200) NOT NULL,
+Turno int NOT NULL,
+TipoEmpleado int NOT NULL
+)
+
+--Creacion de la tabla EmpresaTransporte
+CREATE TABLE EmpresaTransporte(
+IDEmpresa int IDENTITY(1,1) NOT NULL,
+Nombre VARCHAR(200) NOT NULL,
+Telefono int  NOT NULL,
+RUC int NOT NULL,
+NroObservaciones int NOT NULL,
+FechaInicioActividades Datetime NOT NULL,
+CostoViaje float NOT NULL
+)
+
+
+--Creacion de la tabla FichaTratamiento
+CREATE TABLE FichaTratamiento(
+IDFichaTratamiento int IDENTITY(1,1) NOT NULL,
+EstadoFicha VARCHAR(200) NOT NULL,
+NroSesiones int  NOT NULL,
+IntervaloSesion int NOT NULL,
+Diagnostico VARCHAR(200) NOT NULL,
+PlanAlimentacion VARCHAR(200) NOT NULL,
+EscalaActividad VARCHAR(200) NOT NULL,
+IDDetalleHistoriaClinica int NOT NULL,
+IDEmpleado int  NOT NULL
+)
+
+
+--Creacion de la tabla HistoriaClinica
+CREATE TABLE HistoriaClinica(
+IDHistoriaClinica int IDENTITY(1,1) NOT NULL,
+Antecedentes VARCHAR(200) NOT NULL,
+Padecimiento VARCHAR(200) NOT NULL,
+IDPaciente int  NOT NULL
+)
+
+--Creacion de la tabla HojaPreparacion
+CREATE TABLE HojaPreparacion(
+IDHojaPreparacion int IDENTITY(1,1) NOT NULL,
+FechaPreparacion Datetime NOT NULL,
+EstadoHoja VARCHAR(50) NOT NULL,
+CantidadResiduos int NOT NULL,
+IDProtocolo int  NOT NULL,
+)
+
+--Creacion de la tabla DetalleHojaPreparacion
+CREATE TABLE DetalleHojaPreparacion(
+IDHojaPreparacion int NOT NULL,
+IDEmpleado int  NOT NULL
+)
+
+
+
+--Creacion de la tabla Material
+CREATE TABLE Material(
+IDMaterial int IDENTITY(1,1) NOT NULL,
+Descripcion VARCHAR(50) NOT NULL,
+Presentacion VARCHAR(50) NOT NULL,
+Volumen float NOT NULL,
+Peso float NOT NULL
+)
+
+--Creacion de la tabla MaterialxPreparado
+CREATE TABLE MaterialxPreparado(
+IDMaterial int  NOT NULL,
+IDPreparado int  NOT NULL,
+Dosis int NOT NULL
+)
+
+--Creacion de la tabla OrdenTransporte
+CREATE TABLE OrdenTransporte(
+IDOrdenTransporte int IDENTITY(1,1) NOT NULL,
+FechaTransporte Datetime  NOT NULL,
+NumeroContenedores int  NOT NULL,
+Comentario VARCHAR(50), 
+IDEmpresa int NOT NULL
+)
+
+--Creacion de la tabla ContenedorXOrdenTransporte
+CREATE TABLE ContenedorXOrdenTransporte(
+IDOrdenTransporte int NOT NULL,
+IDContenedor int  NOT NULL
+)
+
+--Creacion de la tabla Paciente
+CREATE TABLE Paciente(
+IDPaciente int IDENTITY(1,1) NOT NULL,
+Nombre VARCHAR(200) NOT NULL,
+ApellidoPaterno VARCHAR(200) NOT NULL,
+ApellidoMaterno VARCHAR(200) NOT NULL,
+DNI int NOT NULL,
+Edad int NOT NULL,
+Sexo int NOT NULL,
+Peso float NOT NULL,
+Estado int NOT NULL
+)
+
+--Creacion de la tabla Preparado
+CREATE TABLE Preparado(
+IDPreparado int IDENTITY(1,1) NOT NULL,
+NombrePreparado VARCHAR(200) NOT NULL,
+Preparacion VARCHAR(200) NOT NULL
+)
+
+--Creacion de la tabla Protocolo
+CREATE TABLE Protocolo(
+IDProtocolo int IDENTITY(1,1) NOT NULL,
+NombreProtocolo VARCHAR(400) NOT NULL
+)
+
+
+--Creacion de la tabla ProtocoloxPreparado
+CREATE TABLE ProtocoloxPreparado(
+IDProtocolo int  NOT NULL,
+IDPreparado int  NOT NULL
+)
+
+
+--Creación de las restricciones 
+
+--La PK de la tabla Contenedor
+ALTER TABLE Contenedor
+ADD CONSTRAINT pk_Contenedor
+PRIMARY KEY(IDContenedor)
+GO
+
+--La PK de la tabla DetalleFichaTratamiento
+ALTER TABLE DetalleFichaTratamiento
+ADD CONSTRAINT pk_DetalleFichaTratamiento
+PRIMARY KEY(IDDetalleFichaTratamiento)
+GO
+
+--La PK de la tabla GuiaContingencia
+ALTER TABLE GuiaContingencia
+ADD CONSTRAINT pk_GuiaContingencia
+PRIMARY KEY(IDGuiaContingencia)
+GO
+
+--La PK de la tabla DetalleHistoriaClinica
+ALTER TABLE DetalleHistoriaClinica
+ADD CONSTRAINT pk_DetalleHistoriaClinica
+PRIMARY KEY(IDDetalleHistoriaClinica)
+GO
+
+--La PK de la tabla Empleado
+ALTER TABLE Empleado
+ADD CONSTRAINT pk_Empleado
+PRIMARY KEY(IDEmpleado)
+GO
+
+
+--La PK de la tabla EmpresaTransporte
+ALTER TABLE EmpresaTransporte
+ADD CONSTRAINT pk_EmpresaTransporte
+PRIMARY KEY(IDEmpresa)
+GO
+
+--La PK de la tabla FichaTratamiento
+ALTER TABLE FichaTratamiento
+ADD CONSTRAINT pk_FichaTratamiento
+PRIMARY KEY(IDFichaTratamiento)
+GO
+
+--La PK de la tabla HistoriaClinica
+ALTER TABLE HistoriaClinica
+ADD CONSTRAINT pk_HistoriaClinica
+PRIMARY KEY(IDHistoriaClinica)
+GO
+
+--La PK de la tabla HojaPreparacion
+ALTER TABLE HojaPreparacion
+ADD CONSTRAINT pk_HojaPreparacion
+PRIMARY KEY(IDHojaPreparacion)
+GO
+
+--La PK de la tabla DetalleHojaPreparacion
+ALTER TABLE DetalleHojaPreparacion
+ADD CONSTRAINT pk_DetalleHojaPreparacion
+PRIMARY KEY(IDHojaPreparacion,IDEmpleado)
+GO
+
+--La PK de la tabla Material
+ALTER TABLE Material
+ADD CONSTRAINT pk_Material
+PRIMARY KEY(IDMaterial)
+GO
+
+
+--La PK de la tabla MaterialxPreparado
+ALTER TABLE MaterialxPreparado
+ADD CONSTRAINT pk_MaterialxPreparado
+PRIMARY KEY(IDMaterial,IDPreparado)
+GO
+
+--La PK de la tabla OrdenTransporte
+ALTER TABLE OrdenTransporte
+ADD CONSTRAINT pk_OrdenTransporte
+PRIMARY KEY(IDOrdenTransporte)
+GO
+
+--La PK de la tabla ContenedorXOrdenTransporte
+ALTER TABLE ContenedorXOrdenTransporte
+ADD CONSTRAINT pk_ContenedorXOrdenTransporte
+PRIMARY KEY(IDOrdenTransporte,IDContenedor)
+GO
+
+--La PK de la tabla Paciente
+ALTER TABLE Paciente
+ADD CONSTRAINT pk_Paciente
+PRIMARY KEY(IDPaciente)
+GO
+
+
+--La PK de la tabla Preparado
+ALTER TABLE Preparado
+ADD CONSTRAINT pk_Preparado
+PRIMARY KEY(IDPreparado)
+GO
+
+--La PK de la tabla Protocolo
+ALTER TABLE Protocolo
+ADD CONSTRAINT pk_Protocolo
+PRIMARY KEY(IDProtocolo)
+GO
+
+--La PK de la tabla ProtocoloxPreparado
+ALTER TABLE ProtocoloxPreparado
+ADD CONSTRAINT pk_ProtocoloxPreparado
+PRIMARY KEY(IDProtocolo,IDPreparado)
+GO
+
+--Creación de la restricción de la clave foranea FK
+
+--Creación de la FK Contenedor
+ALTER TABLE Contenedor
+ADD CONSTRAINT fk_ContFicha
+FOREIGN KEY(IDFichaTratamiento)
+REFERENCES FichaTratamiento(IDFichaTratamiento)
+
+--Creación de la FK DetalleFichaTratamiento
+ALTER TABLE DetalleFichaTratamiento
+ADD CONSTRAINT fk_DetFicTratFichaTrat
+FOREIGN KEY(IDFichaTratamiento)
+REFERENCES FichaTratamiento(IDFichaTratamiento)
+
+
+--Creación de la FK DetalleFichaTratamiento
+ALTER TABLE DetalleFichaTratamiento
+ADD CONSTRAINT fk_DetFicTratGuiaCont
+FOREIGN KEY(IDGuiaContingencia )
+REFERENCES GuiaContingencia(IDGuiaContingencia)
+
+--Creación de la FK DetalleFichaTratamiento
+ALTER TABLE DetalleFichaTratamiento
+ADD CONSTRAINT fk_DetFicTratHojaPrepa
+FOREIGN KEY(IDHojaPreparacion)
+REFERENCES HojaPreparacion(IDHojaPreparacion)
+
+--Creación de la FK DetalleHistoriaClinica
+ALTER TABLE DetalleHistoriaClinica
+ADD CONSTRAINT fk_DetalleHistoriaClinica
+FOREIGN KEY(IDHistoriaClinica)
+REFERENCES HistoriaClinica(IDHistoriaClinica)
+
+
+--Creación de la FK FichaTratamiento
+ALTER TABLE FichaTratamiento
+ADD CONSTRAINT fk_FichTraDetallHistCli
+FOREIGN KEY(IDDetalleHistoriaClinica)
+REFERENCES HistoriaClinica(IDHistoriaClinica)
+
+--Creación de la FK FichaTratamiento
+ALTER TABLE FichaTratamiento
+ADD CONSTRAINT fk_FichTraEmpleado
+FOREIGN KEY(IDEmpleado)
+REFERENCES Empleado(IDEmpleado)
+
+--Creación de la FK HistoriaClinica
+ALTER TABLE HistoriaClinica
+ADD CONSTRAINT fk_HistClinPaci
+FOREIGN KEY(IDPaciente)
+REFERENCES Paciente(IDPaciente)
+
+--Creación de la FK HojaPreparacion
+ALTER TABLE HojaPreparacion
+ADD CONSTRAINT fk_HojaProtocolo
+FOREIGN KEY(IDProtocolo)
+REFERENCES Protocolo(IDProtocolo)
+
+--Creación de la FK OrdenTransporte
+ALTER TABLE OrdenTransporte
+ADD CONSTRAINT fk_OrdTransEmpr
+FOREIGN KEY(IDEmpresa)
+REFERENCES EmpresaTransporte(IDEmpresa)
+
+--Creación de la FK MaterialxPreparado
+ALTER TABLE MaterialxPreparado
+ADD CONSTRAINT fk_MaterialxPreparado1
+FOREIGN KEY(IDMaterial)
+REFERENCES Material(IDMaterial)
+
+--Creación de la FK MaterialxPreparado
+ALTER TABLE MaterialxPreparado
+ADD CONSTRAINT fk_MaterialxPreparado2
+FOREIGN KEY(IDPreparado)
+REFERENCES Preparado(IDPreparado)
+
+--Creación de la FK DetalleHojaPreparacion
+ALTER TABLE DetalleHojaPreparacion
+ADD CONSTRAINT fk_DetalleHojaPreparacion1
+FOREIGN KEY(IDHojaPreparacion)
+REFERENCES HojaPreparacion(IDHojaPreparacion)
+
+--Creación de la FK DetalleHojaPreparacion
+ALTER TABLE DetalleHojaPreparacion
+ADD CONSTRAINT fk_DetalleHojaPreparacion2
+FOREIGN KEY(IDEmpleado)
+REFERENCES Empleado(IDEmpleado)
+
+--Creación de la FK ContenedorXOrdenTransporte
+ALTER TABLE ContenedorXOrdenTransporte
+ADD CONSTRAINT fk_ContenedorXOrdenTransporte1
+FOREIGN KEY(IDOrdenTransporte)
+REFERENCES OrdenTransporte(IDOrdenTransporte)
+
+--Creación de la FK ContenedorXOrdenTransporte
+ALTER TABLE ContenedorXOrdenTransporte
+ADD CONSTRAINT fk_ContenedorXOrdenTransporte2
+FOREIGN KEY(IDContenedor)
+REFERENCES Contenedor(IDContenedor)
+
+
+ALTER TABLE ContenedorXOrdenTransporte
+ADD CONSTRAINT fk_ContenedorXOrdenTransporte3
+FOREIGN KEY(IDOrdenTransporte,IDContenedor)
+REFERENCES ContenedorXOrdenTransporte(IDOrdenTransporte,IDContenedor)
+
+
+--Creación de la FK ProtocoloxPreparado
+ALTER TABLE ProtocoloxPreparado
+ADD CONSTRAINT fk_ProtocoloxPreparado1
+FOREIGN KEY(IDProtocolo)
+REFERENCES Protocolo(IDProtocolo)
+
+--Creación de la FK ProtocoloxPreparado
+ALTER TABLE ProtocoloxPreparado
+ADD CONSTRAINT fk_ProtocoloxPreparado2
+FOREIGN KEY(IDPreparado)
+REFERENCES Preparado(IDPreparado)
+
+ALTER TABLE ProtocoloxPreparado
+ADD CONSTRAINT fk_ProtocoloxPreparado3
+FOREIGN KEY(IDProtocolo,IDPreparado)
+REFERENCES ProtocoloxPreparado(IDProtocolo,IDPreparado)
