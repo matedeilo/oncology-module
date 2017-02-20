@@ -295,3 +295,5 @@ C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\SistemaOnc
 C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\SistemaOncologia\obj\Debug\SistemaOncologia.csprojResolveAssemblyReference.cache
 C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\SistemaOncologia\obj\Debug\SistemaOncologia.dll
 C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\SistemaOncologia\obj\Debug\SistemaOncologia.pdb
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\SistemaOncologia\bin\log4net.dll
+C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\SistemaOncologia\bin\log4net.xml

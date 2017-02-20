@@ -17,6 +17,8 @@ namespace SistemaOncologia
         PacienteController pacienteController = new PacienteController();
         ProtocoloController protocoloController = new ProtocoloController();
         Paciente paciente = null;
+        private static readonly log4net.ILog log =
+    log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,6 +28,7 @@ namespace SistemaOncologia
         {
             try
             {
+                log.Info("Iniciando Busqueda");
                  int dni = Int32.Parse(txtDniPaciente.Text);
                 paciente = pacienteController.FindbyID(dni);
                 lblPaciente.Text = paciente.Nombre + " " + paciente.ApellidoPaterno + " " + paciente.ApellidoMaterno;
@@ -42,7 +45,7 @@ namespace SistemaOncologia
             }
             catch (Exception ex)
             {
-                Console.WriteLine("ex");
+                log.Info("Excepcion: " + ex);
                 throw;
             }
         }

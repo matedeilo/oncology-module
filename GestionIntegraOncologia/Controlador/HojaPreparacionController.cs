@@ -13,6 +13,8 @@ namespace Controlador
         private HojaPreparacionDA objHojaPreparacion = null;
         private PacienteDA objPaciente = null;
         private MaterialDA objMaterial = null;
+        private static readonly log4net.ILog log =
+log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public HojaPreparacionController()
         {
             objHojaPreparacion = new HojaPreparacionDA();
@@ -40,21 +42,31 @@ namespace Controlador
 
         public double optimizarPreparado(int edad, double peso, String estado, int idPaciente)
         {
-            int indiceEstadoPaciente = calcularIndiceEstadoPaciente(estado);
-            double indiceEdad = calcularIndiceEdad(edad);
-            double indicePeso = calcularIndicePeso(peso);
+            double dosisOptimizada = 0.0;
 
-            double indiceBase = indiceEstadoPaciente * indiceEdad * indicePeso;
-            double gradoToxicidadPermitido = calcularGradoToxicidadMax(indiceBase);
-            MaterialxPreparado materialxpreparado = objHojaPreparacion.obtenerMateriales(idPaciente);
+            try
+            {
+                int indiceEstadoPaciente = calcularIndiceEstadoPaciente(estado);
+                double indiceEdad = calcularIndiceEdad(edad);
+                double indicePeso = calcularIndicePeso(peso);
 
-            double dosisOptimizada = gradoToxicidadPermitido * materialxpreparado.Dosis;
+                double indiceBase = indiceEstadoPaciente * indiceEdad * indicePeso;
+                double gradoToxicidadPermitido = calcularGradoToxicidadMax(indiceBase);
+                MaterialxPreparado materialxpreparado = objHojaPreparacion.obtenerMateriales(idPaciente);
+
+                dosisOptimizada = gradoToxicidadPermitido * materialxpreparado.Dosis;
+            }catch (Exception ex)
+            {
+                log.Info("Excepcion: "+ex);
+            }
+ 
             return dosisOptimizada;
 
         }
 
         public Material getMaterialxPreparado(int idPaciente)
         {
+
             MaterialxPreparado materialxpreparado = objHojaPreparacion.obtenerMateriales(idPaciente);
             Material material = new Material();
             objMaterial = new MaterialDA();
