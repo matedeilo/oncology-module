@@ -28,3 +28,13 @@ C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\DataAccess
 C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\JuanJosé\Desktop\Proyecto Final TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\bin\Debug\Modelo.dll
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\bin\Debug\Modelo.pdb
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\u201400194\Source\Repos\oncology-module6\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.pdb

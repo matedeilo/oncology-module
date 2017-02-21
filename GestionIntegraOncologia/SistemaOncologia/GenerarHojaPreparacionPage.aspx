@@ -5,24 +5,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+    <title>Generacion de hoja de Preparacion</title>
 </head>
 <body>
+    <div class="jumbotron">
     <form id="form1" runat="server">
         <asp:Label ID="Label1" runat="server" Text="Buscar Paciente:"></asp:Label>
     <div>
     
         <asp:Label ID="Label2" runat="server" Text="DNI Paciente:"></asp:Label>
         <asp:TextBox ID="txtDniPaciente" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
         <asp:Button ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Buscar" style="height: 26px" />
         <br />
         <br />
         <asp:Label ID="lblPaciente" runat="server" Text="Label"></asp:Label>
         <br />
         <br />
-        <asp:GridView ID="grdPaciente" runat="server">
-        </asp:GridView>
+        <asp:GridView ID="grdPaciente" runat="server" CellPadding="6"  
+     CssClass= "table table-striped table-bordered table-condensed">        </asp:GridView>
         <br />
         <br />
         <br />
@@ -48,5 +53,7 @@
     
     </div>
     </form>
+
+    </div>
 </body>
 </html>
