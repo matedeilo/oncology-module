@@ -11,11 +11,22 @@
     <title>Generacion de hoja de Preparacion</title>
 </head>
 <body>
-    <div class="form-group" style="margin-left:60px">
+       <div class="jumbotron">
+          <h1>Sistema Integral Oncologico Clinica Ricardo Palma</h1>
+        </div>
+    <nav class="navbar navbar-default" role="navigation">
+      
+    </nav>
+    <div class="container">
+  
+
+          <div class="container">
+
+             <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                      <div class="form-group" style="margin-left:60px">
        <div class="row">
-            <div class="col-md-2" >
-                <img src="http://logosenvector.com/logo/img/clinica-ricardo-palma-223.jpg" alt="Logo CLinica"width=100 height=100 />
-            </div>
             <div class="col-md-10" >
                 <h1 style="">Generar Hoja de preparación</h1>
             </div>
@@ -77,10 +88,20 @@
         <asp:GridView ID="grdHojaPreparacion" runat="server" CellPadding="5"  
             CssClass= "table table-striped table-bordered table-condensed">
         </asp:GridView>
+            </div>
+        </div>
+
+    </div>
        
-    <footer>
-            <h5>Creado por Grupo 3 - <span>Taller de Proyectos 2 - 2017</span> - Upc Epe Ing. de Sistemas ©</h5>   
-    </footer>
+      <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; Clinica Ricardo Palma 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     
     </form>
 
