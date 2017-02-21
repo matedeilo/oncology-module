@@ -52,7 +52,6 @@ namespace DataAccess
             {
                 contex.HojaPreparacion.Add(objC);
                 contex.SaveChanges();
-                contex.Entry(contex.HojaPreparacion).Reload();
             }
         }
         public void UpdateHojaPreparacion(HojaPreparacion objC)
@@ -67,33 +66,123 @@ namespace DataAccess
             }
         }
 
-        public MaterialxPreparado obtenerMateriales(int id) {
+        public List<Material> obtenerMateriales(int id, int idPreparado)
+        {
             HojaPreparacion objc = null;
             Paciente objPaciente = null;
             HistoriaClinica objHistoriaClinica = null;
             DetalleHistoriaClinica objDetalleHistoria = null;
             FichaTratamiento objFichaTratamiento = null;
             DetalleFichaTratamiento objDetalleFicha = null;
-            HojaPreparacion objHojaPreparacion = null;
             Protocolo objProtocolo = null;
-            ProtocoloxPreparado objProtxPrep = null;
-            Preparado objPreparado = null;
-            MaterialxPreparado objMatxPrep = null;
+            List<ProtocoloxPreparado> objProtxPrep = null;
+            List<Preparado> listaPreparados = new List<Preparado>();
+            List<MaterialxPreparado> objMatxPrep = new List<MaterialxPreparado>();
+            List<Material> listaMateriales = new List<Material>();
             using (OncologiaEntities contex = new OncologiaEntities())
             {
                 objPaciente = contex.Paciente.First(c => c.IDPaciente == id);
-                objHistoriaClinica = contex.HistoriaClinica.First(c=>c.IDPaciente == objPaciente.IDPaciente);
-                objDetalleHistoria = contex.DetalleHistoriaClinica.First(c=>c.IDHistoriaClinica == objHistoriaClinica.IDHistoriaClinica);
-                objFichaTratamiento = contex.FichaTratamiento.First(c=>c.IDDetalleHistoriaClinica == objDetalleHistoria.IDDetalleHistoriaClinica);
-                objDetalleFicha = contex.DetalleFichaTratamiento.First(c=>c.IDFichaTratamiento == objFichaTratamiento.IDFichaTratamiento);
-                objHojaPreparacion = contex.HojaPreparacion.First(c=>c.IDHojaPreparacion == objDetalleFicha.IDHojaPreparacion);
-                objProtocolo = contex.Protocolo.First(c=>c.IDProtocolo == objHojaPreparacion.IDProtocolo);
-                objProtxPrep = contex.ProtocoloxPreparado.First(c=>c.IDProtocolo == objProtocolo.IDProtocolo);
-                objPreparado = contex.Preparado.First(c=>c.IDPreparado == objProtxPrep.IDPreparado);
-                objMatxPrep = contex.MaterialxPreparado.First(c=>c.IDPreparado == objPreparado.IDPreparado);
+                objHistoriaClinica = contex.HistoriaClinica.First(c => c.IDPaciente == objPaciente.IDPaciente);
+                objDetalleHistoria = contex.DetalleHistoriaClinica.First(c => c.IDHistoriaClinica == objHistoriaClinica.IDHistoriaClinica);
+                objFichaTratamiento = contex.FichaTratamiento.First(c => c.IDDetalleHistoriaClinica == objDetalleHistoria.IDDetalleHistoriaClinica);
+                objDetalleFicha = contex.DetalleFichaTratamiento.First(c => c.IDFichaTratamiento == objFichaTratamiento.IDFichaTratamiento);
+                objProtocolo = contex.Protocolo.First(c => c.IDProtocolo == objDetalleFicha.IDProtocolo);
+                objProtxPrep = contex.ProtocoloxPreparado.Where(c => c.IDProtocolo == objProtocolo.IDProtocolo).ToList();
+                    objMatxPrep = contex.MaterialxPreparado.Where(c => c.IDPreparado == idPreparado).ToList();
+                    foreach (MaterialxPreparado materialxPreparado in objMatxPrep)
+                    {
+                        listaMateriales.Add(materialxPreparado.Material);
+                    }
             }
 
-            return objMatxPrep;
+            return listaMateriales;
+
+        }
+
+
+        public List<Preparado> obtenerPreparaciones(int id)
+        {
+            Paciente objPaciente = null;
+            HistoriaClinica objHistoriaClinica = null;
+            DetalleHistoriaClinica objDetalleHistoria = null;
+            FichaTratamiento objFichaTratamiento = null;
+            DetalleFichaTratamiento objDetalleFicha = null;
+            Protocolo objProtocolo = null;
+            List<ProtocoloxPreparado> objProtxPrep = null;
+            List<Preparado> listaPreparados = new List<Preparado>();
+            List<MaterialxPreparado> objMatxPrep = new List<MaterialxPreparado>();
+            List<Material> listaMateriales = new List<Material>();
+            using (OncologiaEntities contex = new OncologiaEntities())
+            {
+                objPaciente = contex.Paciente.First(c => c.IDPaciente == id);
+                objHistoriaClinica = contex.HistoriaClinica.First(c => c.IDPaciente == objPaciente.IDPaciente);
+                objDetalleHistoria = contex.DetalleHistoriaClinica.First(c => c.IDHistoriaClinica == objHistoriaClinica.IDHistoriaClinica);
+                objFichaTratamiento = contex.FichaTratamiento.First(c => c.IDDetalleHistoriaClinica == objDetalleHistoria.IDDetalleHistoriaClinica);
+                objDetalleFicha = contex.DetalleFichaTratamiento.First(c => c.IDFichaTratamiento == objFichaTratamiento.IDFichaTratamiento);
+                objProtocolo = contex.Protocolo.First(c => c.IDProtocolo == objDetalleFicha.IDProtocolo);
+                objProtxPrep = contex.ProtocoloxPreparado.Where(c => c.IDProtocolo == objProtocolo.IDProtocolo).ToList();
+                foreach (ProtocoloxPreparado protocoloxPreparado in objProtxPrep)
+                {
+                    listaPreparados.Add(protocoloxPreparado.Preparado);
+                }
+
+            }
+
+            return listaPreparados;
+
+        }
+
+        public List<List<MaterialxPreparado>> obtenerMaterialesxPreparado(int id, int idPreparado)
+        {
+            HojaPreparacion objc = null;
+            Paciente objPaciente = null;
+            HistoriaClinica objHistoriaClinica = null;
+            DetalleHistoriaClinica objDetalleHistoria = null;
+            FichaTratamiento objFichaTratamiento = null;
+            DetalleFichaTratamiento objDetalleFicha = null;
+            Protocolo objProtocolo = null;
+            List<ProtocoloxPreparado> objProtxPrep = null;
+            List<Preparado> listaPreparados = new List<Preparado>();
+            List<MaterialxPreparado> objMatxPrep = new List<MaterialxPreparado>();
+            List<List<MaterialxPreparado>> listadoMaterialxPreparado = new List<List<MaterialxPreparado>>();
+            using (OncologiaEntities contex = new OncologiaEntities())
+            {
+                objPaciente = contex.Paciente.First(c => c.IDPaciente == id);
+                objHistoriaClinica = contex.HistoriaClinica.First(c => c.IDPaciente == objPaciente.IDPaciente);
+                objDetalleHistoria = contex.DetalleHistoriaClinica.First(c => c.IDHistoriaClinica == objHistoriaClinica.IDHistoriaClinica);
+                objFichaTratamiento = contex.FichaTratamiento.First(c => c.IDDetalleHistoriaClinica == objDetalleHistoria.IDDetalleHistoriaClinica);
+                objDetalleFicha = contex.DetalleFichaTratamiento.First(c => c.IDFichaTratamiento == objFichaTratamiento.IDFichaTratamiento);
+                objProtocolo = contex.Protocolo.First(c => c.IDProtocolo == objDetalleFicha.IDProtocolo);
+                objProtxPrep = contex.ProtocoloxPreparado.Where(c => c.IDProtocolo == objProtocolo.IDProtocolo).ToList();
+                 objMatxPrep = contex.MaterialxPreparado.Where(c => c.IDPreparado == idPreparado).ToList();
+                listadoMaterialxPreparado.Add(objMatxPrep.ToList());
+
+            }
+
+            return listadoMaterialxPreparado;
+
+        }
+
+
+        public int obtenerProtocoloId(int id)
+        {
+            Paciente objPaciente = null;
+            HistoriaClinica objHistoriaClinica = null;
+            DetalleHistoriaClinica objDetalleHistoria = null;
+            FichaTratamiento objFichaTratamiento = null;
+            DetalleFichaTratamiento objDetalleFicha = null;
+            int protocoloID = 0;
+            using (OncologiaEntities contex = new OncologiaEntities())
+            {
+                objPaciente = contex.Paciente.First(c => c.IDPaciente == id);
+                objHistoriaClinica = contex.HistoriaClinica.First(c => c.IDPaciente == objPaciente.IDPaciente);
+                objDetalleHistoria = contex.DetalleHistoriaClinica.First(c => c.IDHistoriaClinica == objHistoriaClinica.IDHistoriaClinica);
+                objFichaTratamiento = contex.FichaTratamiento.First(c => c.IDDetalleHistoriaClinica == objDetalleHistoria.IDDetalleHistoriaClinica);
+                objDetalleFicha = contex.DetalleFichaTratamiento.First(c => c.IDFichaTratamiento == objFichaTratamiento.IDFichaTratamiento);
+                protocoloID = objDetalleFicha.IDProtocolo;
+            }
+
+            return protocoloID;
 
         }
 

@@ -15,6 +15,6 @@ namespace Modelo
         public String EstadoPaciente { get; set; }
         public int IDFichaTratamiento { get; set; }
         public int IDGuiaContingencia { get; set; }
-        public int IDHojaPreparacion { get; set; }
+        public int? IDHojaPreparacion { get; set; }
     }
 }

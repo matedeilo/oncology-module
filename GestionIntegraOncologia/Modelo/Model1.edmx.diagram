@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7cb013856c654e1c8507a0b80221ef7c" Name="Diagram1">
-        <EntityTypeShape EntityType="OncologiaModel.Contenedor" Width="1.5" PointX="9.75" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.ContenedorXOrdenTransporte" Width="1.5" PointX="12" PointY="11.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.DetalleFichaTratamiento" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.DetalleHistoriaClinica" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.Empleado" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.EmpresaTransporte" Width="1.5" PointX="7.5" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.FichaTratamiento" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.GuiaContingencia" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.HistoriaClinica" Width="1.5" PointX="5.25" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.HojaPreparacion" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.Material" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.MaterialxPreparado" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.OrdenTransporte" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.Paciente" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.Preparado" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.Protocolo" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="OncologiaModel.ProtocoloxPreparado" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="0ad459eeea824c20820cd50db4a98ad8" Name="Diagram1">
+        <EntityTypeShape EntityType="OncologiaModel.Contenedor" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.ContenedorXOrdenTransporte" Width="1.5" PointX="12" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.DetalleFichaTratamiento" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.DetalleHistoriaClinica" Width="1.5" PointX="7.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.Empleado" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.EmpresaTransporte" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.FichaTratamiento" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.GuiaContingencia" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.HistoriaClinica" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.HojaPreparacion" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.Material" Width="1.5" PointX="3.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.MaterialxPreparado" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.OrdenTransporte" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.Paciente" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.Preparado" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.Protocolo" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OncologiaModel.ProtocoloxPreparado" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
         <AssociationConnector Association="OncologiaModel.fk_ContenedorXOrdenTransporte2" ManuallyRouted="false" />
         <AssociationConnector Association="OncologiaModel.fk_ContFicha" ManuallyRouted="false" />
         <AssociationConnector Association="OncologiaModel.fk_ContenedorXOrdenTransporte1" ManuallyRouted="false" />
@@ -29,6 +29,7 @@
         <AssociationConnector Association="OncologiaModel.fk_DetFicTratFichaTrat" ManuallyRouted="false" />
         <AssociationConnector Association="OncologiaModel.fk_DetFicTratGuiaCont" ManuallyRouted="false" />
         <AssociationConnector Association="OncologiaModel.fk_DetFicTratHojaPrepa" ManuallyRouted="false" />
+        <AssociationConnector Association="OncologiaModel.fk_DetFicTratProtocolo" ManuallyRouted="false" />
         <AssociationConnector Association="OncologiaModel.fk_DetalleHistoriaClinica" ManuallyRouted="false" />
         <AssociationConnector Association="OncologiaModel.fk_FichTraEmpleado" ManuallyRouted="false" />
         <AssociationConnector Association="OncologiaModel.fk_OrdTransEmpr" ManuallyRouted="false" />

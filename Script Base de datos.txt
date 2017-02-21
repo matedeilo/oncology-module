@@ -27,7 +27,8 @@ NroSesion int NOT NULL,
 EstadoPaciente VARCHAR(60) NOT NULL,
 IDFichaTratamiento  int NOT NULL,
 IDGuiaContingencia int NOT NULL,
-IDHojaPreparacion int  NOT NULL
+IDProtocolo int NOT NULL,
+IDHojaPreparacion int  
 )
 
 --Creacion de la tabla GuiaContingencia
@@ -93,7 +94,7 @@ CREATE TABLE HojaPreparacion(
 IDHojaPreparacion int IDENTITY(1,1) NOT NULL,
 FechaPreparacion Datetime NOT NULL,
 EstadoHoja VARCHAR(50) NOT NULL,
-CantidadResiduos int NOT NULL,
+CantidadResiduos int ,
 IDProtocolo int  NOT NULL,
 )
 
@@ -309,6 +310,12 @@ ALTER TABLE DetalleFichaTratamiento
 ADD CONSTRAINT fk_DetFicTratHojaPrepa
 FOREIGN KEY(IDHojaPreparacion)
 REFERENCES HojaPreparacion(IDHojaPreparacion)
+
+--Creación de la FK DetalleFichaTratamiento
+ALTER TABLE DetalleFichaTratamiento
+ADD CONSTRAINT fk_DetFicTratProtocolo
+FOREIGN KEY(IDProtocolo)
+REFERENCES Protocolo(IDProtocolo)
 
 --Creación de la FK DetalleHistoriaClinica
 ALTER TABLE DetalleHistoriaClinica

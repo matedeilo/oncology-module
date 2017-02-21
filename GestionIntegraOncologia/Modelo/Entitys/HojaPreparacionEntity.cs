@@ -11,7 +11,7 @@ namespace Modelo
         public int IDHojaPreparacion { get; set; }
         public DateTime FechaPreparacion { get; set; }
         public String EstadoHoja { get; set; }
-        public int CantidadResiduos { get; set; }
+        public int? CantidadResiduos { get; set; }
         public int IDProtocolo { get; set; }
     }
 }

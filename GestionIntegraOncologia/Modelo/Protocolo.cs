@@ -16,6 +16,7 @@ namespace Modelo
     {
         public Protocolo()
         {
+            this.DetalleFichaTratamiento = new HashSet<DetalleFichaTratamiento>();
             this.HojaPreparacion = new HashSet<HojaPreparacion>();
             this.ProtocoloxPreparado = new HashSet<ProtocoloxPreparado>();
         }
@@ -23,6 +24,7 @@ namespace Modelo
         public int IDProtocolo { get; set; }
         public string NombreProtocolo { get; set; }
     
+        public virtual ICollection<DetalleFichaTratamiento> DetalleFichaTratamiento { get; set; }
         public virtual ICollection<HojaPreparacion> HojaPreparacion { get; set; }
         public virtual ICollection<ProtocoloxPreparado> ProtocoloxPreparado { get; set; }
     }

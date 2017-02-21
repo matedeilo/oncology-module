@@ -35,10 +35,12 @@
     <Property Name="EstadoPaciente" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDFichaTratamiento" Type="Int32" Nullable="false" />
     <Property Name="IDGuiaContingencia" Type="Int32" Nullable="false" />
-    <Property Name="IDHojaPreparacion" Type="Int32" Nullable="false" />
+    <Property Name="IDProtocolo" Type="Int32" Nullable="false" />
+    <Property Name="IDHojaPreparacion" Type="Int32" />
     <NavigationProperty Name="FichaTratamiento" Relationship="Self.fk_DetFicTratFichaTrat" FromRole="DetalleFichaTratamiento" ToRole="FichaTratamiento" />
     <NavigationProperty Name="GuiaContingencia" Relationship="Self.fk_DetFicTratGuiaCont" FromRole="DetalleFichaTratamiento" ToRole="GuiaContingencia" />
     <NavigationProperty Name="HojaPreparacion" Relationship="Self.fk_DetFicTratHojaPrepa" FromRole="DetalleFichaTratamiento" ToRole="HojaPreparacion" />
+    <NavigationProperty Name="Protocolo" Relationship="Self.fk_DetFicTratProtocolo" FromRole="DetalleFichaTratamiento" ToRole="Protocolo" />
   </EntityType>
   <EntityType Name="DetalleHistoriaClinica">
     <Key>
@@ -121,7 +123,7 @@
     <Property Name="IDHojaPreparacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FechaPreparacion" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="EstadoHoja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CantidadResiduos" Type="Int32" Nullable="false" />
+    <Property Name="CantidadResiduos" Type="Int32" />
     <Property Name="IDProtocolo" Type="Int32" Nullable="false" />
     <NavigationProperty Name="DetalleFichaTratamiento" Relationship="Self.fk_DetFicTratHojaPrepa" FromRole="HojaPreparacion" ToRole="DetalleFichaTratamiento" />
     <NavigationProperty Name="Protocolo" Relationship="Self.fk_HojaProtocolo" FromRole="HojaPreparacion" ToRole="Protocolo" />
@@ -192,6 +194,7 @@
     </Key>
     <Property Name="IDProtocolo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NombreProtocolo" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DetalleFichaTratamiento" Relationship="Self.fk_DetFicTratProtocolo" FromRole="Protocolo" ToRole="DetalleFichaTratamiento" />
     <NavigationProperty Name="HojaPreparacion" Relationship="Self.fk_HojaProtocolo" FromRole="Protocolo" ToRole="HojaPreparacion" />
     <NavigationProperty Name="ProtocoloxPreparado" Relationship="Self.fk_ProtocoloxPreparado1" FromRole="Protocolo" ToRole="ProtocoloxPreparado" />
   </EntityType>
@@ -282,7 +285,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_DetFicTratHojaPrepa">
-    <End Role="HojaPreparacion" Type="Self.HojaPreparacion" Multiplicity="1" />
+    <End Role="HojaPreparacion" Type="Self.HojaPreparacion" Multiplicity="0..1" />
     <End Role="DetalleFichaTratamiento" Type="Self.DetalleFichaTratamiento" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HojaPreparacion">
@@ -290,6 +293,18 @@
       </Principal>
       <Dependent Role="DetalleFichaTratamiento">
         <PropertyRef Name="IDHojaPreparacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DetFicTratProtocolo">
+    <End Role="Protocolo" Type="Self.Protocolo" Multiplicity="1" />
+    <End Role="DetalleFichaTratamiento" Type="Self.DetalleFichaTratamiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Protocolo">
+        <PropertyRef Name="IDProtocolo" />
+      </Principal>
+      <Dependent Role="DetalleFichaTratamiento">
+        <PropertyRef Name="IDProtocolo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -475,6 +490,10 @@
     </AssociationSet>
     <AssociationSet Name="fk_DetFicTratHojaPrepa" Association="Self.fk_DetFicTratHojaPrepa">
       <End Role="HojaPreparacion" EntitySet="HojaPreparacion" />
+      <End Role="DetalleFichaTratamiento" EntitySet="DetalleFichaTratamiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DetFicTratProtocolo" Association="Self.fk_DetFicTratProtocolo">
+      <End Role="Protocolo" EntitySet="Protocolo" />
       <End Role="DetalleFichaTratamiento" EntitySet="DetalleFichaTratamiento" />
     </AssociationSet>
     <AssociationSet Name="fk_DetalleHistoriaClinica" Association="Self.fk_DetalleHistoriaClinica">

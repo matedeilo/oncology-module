@@ -23,7 +23,7 @@ namespace Modelo
         public int IDHojaPreparacion { get; set; }
         public System.DateTime FechaPreparacion { get; set; }
         public string EstadoHoja { get; set; }
-        public int CantidadResiduos { get; set; }
+        public Nullable<int> CantidadResiduos { get; set; }
         public int IDProtocolo { get; set; }
     
         public virtual ICollection<DetalleFichaTratamiento> DetalleFichaTratamiento { get; set; }

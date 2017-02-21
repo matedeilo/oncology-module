@@ -40,10 +40,16 @@ log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().Dec
             objHojaPreparacion.UpdateHojaPreparacion(objC);
         }
 
-        public double optimizarPreparado(int edad, double peso, String estado, int idPaciente)
+        public int getProtocoloiD(int idPaciente)
         {
-            double dosisOptimizada = 0.0;
+            int idProtocolo = objHojaPreparacion.obtenerProtocoloId(idPaciente);
+            return idProtocolo;
+        }
 
+        public List<string> optimizarPreparado(int edad, double peso, String estado, int idPaciente, int idPreparado)
+        {
+            List<MaterialxPreparado> materialxpreparadoOptimizado = new List<MaterialxPreparado>();
+            List<string> listaDosisOptimizada = new List<string>();
             try
             {
                 int indiceEstadoPaciente = calcularIndiceEstadoPaciente(estado);
@@ -52,26 +58,68 @@ log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().Dec
 
                 double indiceBase = indiceEstadoPaciente * indiceEdad * indicePeso;
                 double gradoToxicidadPermitido = calcularGradoToxicidadMax(indiceBase);
-                MaterialxPreparado materialxpreparado = objHojaPreparacion.obtenerMateriales(idPaciente);
-
-                dosisOptimizada = gradoToxicidadPermitido * materialxpreparado.Dosis;
+                List<List<MaterialxPreparado>> materialxpreparadoLista = objHojaPreparacion.obtenerMaterialesxPreparado(idPaciente, idPreparado);
+                foreach (List<MaterialxPreparado> materialxpreparado in materialxpreparadoLista)
+                {
+                    foreach (MaterialxPreparado materialxPreparado2 in materialxpreparado)
+                    {
+                        materialxPreparado2.Dosis = Convert.ToInt32(gradoToxicidadPermitido * materialxPreparado2.Dosis);
+                        materialxpreparadoOptimizado.Add(materialxPreparado2);
+                        listaDosisOptimizada.Add(materialxPreparado2.Dosis + "");
+                    }
+                }
             }catch (Exception ex)
             {
                 log.Info("Excepcion: "+ex);
             }
  
-            return dosisOptimizada;
+            return listaDosisOptimizada;
 
         }
 
-        public Material getMaterialxPreparado(int idPaciente)
+        public List<Material> getMaterialesOptimizacion(int edad, double peso, String estado, int idPaciente,int idPreparado)
         {
+            List<Material> listadoMateriales = new List<Material>();
+            try
+            {
+                int indiceEstadoPaciente = calcularIndiceEstadoPaciente(estado);
+                double indiceEdad = calcularIndiceEdad(edad);
+                double indicePeso = calcularIndicePeso(peso);
 
-            MaterialxPreparado materialxpreparado = objHojaPreparacion.obtenerMateriales(idPaciente);
-            Material material = new Material();
-            objMaterial = new MaterialDA();
-            material = objMaterial.FindbyID(materialxpreparado.IDMaterial);
-            return material;
+                double indiceBase = indiceEstadoPaciente * indiceEdad * indicePeso;
+                double gradoToxicidadPermitido = calcularGradoToxicidadMax(indiceBase);
+                listadoMateriales = objHojaPreparacion.obtenerMateriales(idPaciente, idPreparado);
+            }
+            catch (Exception ex)
+            {
+                log.Info("Excepcion: " + ex);
+            }
+
+            return listadoMateriales;
+
+        }
+
+
+        public List<Preparado> getPreparados(int edad, double peso, String estado, int idPaciente)
+        {
+            List<Preparado> listadoPreparados= new List<Preparado>();
+            try
+            {
+                int indiceEstadoPaciente = calcularIndiceEstadoPaciente(estado);
+                double indiceEdad = calcularIndiceEdad(edad);
+                double indicePeso = calcularIndicePeso(peso);
+
+                double indiceBase = indiceEstadoPaciente * indiceEdad * indicePeso;
+                double gradoToxicidadPermitido = calcularGradoToxicidadMax(indiceBase);
+                listadoPreparados = objHojaPreparacion.obtenerPreparaciones(idPaciente);
+            }
+            catch (Exception ex)
+            {
+                log.Info("Excepcion: " + ex);
+            }
+
+            return listadoPreparados;
+
         }
 
         private int calcularIndiceEstadoPaciente(String estado)

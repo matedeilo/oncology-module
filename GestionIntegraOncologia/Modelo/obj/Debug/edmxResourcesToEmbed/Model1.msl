@@ -30,6 +30,7 @@
           <ScalarProperty Name="EstadoPaciente" ColumnName="EstadoPaciente" />
           <ScalarProperty Name="IDFichaTratamiento" ColumnName="IDFichaTratamiento" />
           <ScalarProperty Name="IDGuiaContingencia" ColumnName="IDGuiaContingencia" />
+          <ScalarProperty Name="IDProtocolo" ColumnName="IDProtocolo" />
           <ScalarProperty Name="IDHojaPreparacion" ColumnName="IDHojaPreparacion" />
         </MappingFragment>
       </EntityTypeMapping>

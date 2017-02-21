@@ -15,7 +15,7 @@
         <asp:Label ID="Label2" runat="server" Text="DNI Paciente:"></asp:Label>
         <asp:TextBox ID="txtDniPaciente" runat="server"></asp:TextBox>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Buscar" />
+        <asp:Button ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Buscar" style="height: 26px" />
         <br />
         <br />
         <asp:Label ID="lblPaciente" runat="server" Text="Label"></asp:Label>

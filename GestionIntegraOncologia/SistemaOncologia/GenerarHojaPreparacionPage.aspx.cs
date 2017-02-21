@@ -18,7 +18,7 @@ namespace SistemaOncologia
         ProtocoloController protocoloController = new ProtocoloController();
         Paciente paciente = null;
         private static readonly log4net.ILog log =
-    log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -52,22 +52,40 @@ namespace SistemaOncologia
 
         protected void btnGenerar_Click(object sender, EventArgs e)
         {
+         
             int dni = Int32.Parse(txtDniPaciente.Text);
             paciente = pacienteController.FindbyID(dni);
             int edad = paciente.Edad;
             double peso = Convert.ToDouble(txtPeso.Text);
             String estado = txtEstadoPaciente.Text.ToString();
             int idPaciente = paciente.IDPaciente;
-            double dosisOptimizada = hojaPreparacionController.optimizarPreparado(edad,peso,estado,idPaciente);
-
+            List<Preparado> listaPreparado = hojaPreparacionController.getPreparados(edad, peso, estado, idPaciente);
             DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[3] { new DataColumn("Descripcion", typeof(string)),
+            dt.Columns.AddRange(new DataColumn[4] {new DataColumn("Preparado", typeof(string)),
+                            new DataColumn("Descripcion", typeof(string)),
                             new DataColumn("Presentacion", typeof(string)),
-                            new DataColumn("Dosis",typeof(double))});
-            dt.Rows.Add(hojaPreparacionController.getMaterialxPreparado(idPaciente).Descripcion
-                , hojaPreparacionController.getMaterialxPreparado(idPaciente).Presentacion, dosisOptimizada);
-            grdHojaPreparacion.DataSource = dt;
-            grdHojaPreparacion.DataBind();
+                            new DataColumn("Dosis",typeof(string))});
+                    foreach (Preparado preparado in listaPreparado)
+                    {
+                            List<Material> materialesOptimizacion = hojaPreparacionController.getMaterialesOptimizacion(edad, peso, estado, idPaciente,preparado.IDPreparado);
+                            List<string> dosisOptimizada = hojaPreparacionController.optimizarPreparado(edad, peso, estado, idPaciente,preparado.IDPreparado);
+                             int contadorDosis = 0;
+                            foreach (Material material in materialesOptimizacion)
+                           {
+                                 dt.Rows.Add(preparado.NombrePreparado,material.Descripcion, material.Presentacion, dosisOptimizada[contadorDosis] + " " + "gramos");
+                                 grdHojaPreparacion.DataSource = dt;
+                                 grdHojaPreparacion.DataBind();
+                                 contadorDosis++;
+                            }
+                    }
+       
+            DateTime now = DateTime.Now;
+            int idProtocolo = hojaPreparacionController.getProtocoloiD(idPaciente);
+            HojaPreparacion hojaPreparación = new HojaPreparacion();
+            hojaPreparación.IDProtocolo = idProtocolo;
+            hojaPreparación.EstadoHoja = "Pendiente";
+            hojaPreparación.FechaPreparacion = now;
+            hojaPreparacionController.CreateHojaPreparacion(hojaPreparación);
         }
     }
 }

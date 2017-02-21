@@ -21,6 +21,18 @@ VALUES ('MaterialC','64 UNIDADES',33,345.4);
 INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
 VALUES ('MaterialD','77 UNIDADES',44,332.4);
 
+INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
+VALUES ('MaterialE','66 UNIDADES',22,32.4);
+
+INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
+VALUES ('MaterialF','77 UNIDADES',11,32.4);
+
+INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
+VALUES ('MaterialG','88 UNIDADES',33,345.4);
+
+INSERT INTO Material(Descripcion,Presentacion,Volumen,Peso)
+VALUES ('MaterialH','99 UNIDADES',44,332.4);
+
 
 INSERT INTO Preparado(NombrePreparado,Preparacion)
 VALUES ('Preparado1','Receta de Preparacion');
@@ -48,6 +60,15 @@ INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
 VALUES ('3','1','55');
 
 
+INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
+VALUES ('4','2','122');
+
+INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
+VALUES ('5','2','66');
+
+
+INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
+VALUES ('6','2','90');
 
 INSERT INTO MaterialxPreparado(IDMaterial,IDPreparado,Dosis)
 VALUES ('4','1','90');
@@ -55,6 +76,8 @@ VALUES ('4','1','90');
 INSERT INTO ProtocoloxPreparado(IDProtocolo,IDPreparado)
 VALUES ('1','1');
 
+INSERT INTO ProtocoloxPreparado(IDProtocolo,IDPreparado)
+VALUES ('1','2');
 
 INSERT INTO GuiaContingencia(TipoGuia,Descripcion)
 VALUES ('1','Guia para Paros Cardiacos');
@@ -87,5 +110,5 @@ INSERT INTO HojaPreparacion(FechaPreparacion,EstadoHoja,CantidadResiduos,IDProto
 VALUES (GETDATE(),'Generada','23','1');
 
 
-INSERT INTO DetalleFichaTratamiento(Observaciones,FechaSesion,NroSesion,EstadoPaciente,IDFichaTratamiento,IDGuiaContingencia,IDHojaPreparacion)
+INSERT INTO DetalleFichaTratamiento(Observaciones,FechaSesion,NroSesion,EstadoPaciente,IDFichaTratamiento,IDGuiaContingencia,IDProtocolo)
 VALUES ('No hay Observaciones',GETDATE(),'1','Bueno','1','1','1');

@@ -21,10 +21,12 @@ namespace Modelo
         public string EstadoPaciente { get; set; }
         public int IDFichaTratamiento { get; set; }
         public int IDGuiaContingencia { get; set; }
-        public int IDHojaPreparacion { get; set; }
+        public int IDProtocolo { get; set; }
+        public Nullable<int> IDHojaPreparacion { get; set; }
     
         public virtual FichaTratamiento FichaTratamiento { get; set; }
         public virtual GuiaContingencia GuiaContingencia { get; set; }
         public virtual HojaPreparacion HojaPreparacion { get; set; }
+        public virtual Protocolo Protocolo { get; set; }
     }
 }
