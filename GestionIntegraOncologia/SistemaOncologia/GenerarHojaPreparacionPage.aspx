@@ -5,53 +5,71 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <title>Generacion de hoja de Preparacion</title>
 </head>
 <body>
-    <div class="jumbotron">
-    <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Buscar Paciente:"></asp:Label>
-    <div>
-    
-        <asp:Label ID="Label2" runat="server" Text="DNI Paciente:"></asp:Label>
-        <asp:TextBox ID="txtDniPaciente" runat="server"></asp:TextBox>
-
-        <asp:Button ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Buscar" style="height: 26px" />
-        <br />
-        <br />
-        <asp:Label ID="lblPaciente" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-        <asp:GridView ID="grdPaciente" runat="server" CellPadding="6"  
-     CssClass= "table table-striped table-bordered table-condensed">        </asp:GridView>
-        <br />
-        <br />
-        <br />
-        <br />
-        <asp:Label ID="Label3" runat="server" Text="Peso Paciente: "></asp:Label>
-&nbsp;<asp:TextBox ID="txtPeso" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Label ID="Label4" runat="server" Text="Estado Paciente:"></asp:Label>
-        <asp:TextBox ID="txtEstadoPaciente" runat="server" style="margin-left: 47px"></asp:TextBox>
-        <br />
-        <br />
-        <br />
-        <asp:Button ID="btnGenerar" runat="server" Text="Generar " OnClick="btnGenerar_Click" />
-        <br />
-        <br />
-        <asp:Label ID="lblDosisOptimizada" runat="server" Text="Label"></asp:Label>
-        <br />
-        <br />
-        <asp:GridView ID="grdHojaPreparacion" runat="server">
-        </asp:GridView>
-        <br />
-    
+    <div class="jumbotron" style="margin-left:60px"  >
+        <div class="">
+            <form id="form1" runat="server">
+            <h2 class="text-center"><asp:Label ID="Label1" runat="server" Text="Buscar Paciente:"></asp:Label></h2>
+        </div>
+    <div class="form-group">
+       <div class="row">
+            <div class="col-md-2" >
+                <asp:Label ID="Label2" runat="server" Text="DNI Paciente:"></asp:Label>
+            </div>
+        <div class="col-md-2">
+            <asp:TextBox ID="txtDniPaciente" runat="server" class="form-control input-lg" Width="160px" Height="3px" required='' type='number'></asp:TextBox>
+        </div>
+        <div class="col-md-7">
+            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Buscar"  />
+        </div>
+           </div>
     </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12" >
+                <asp:Label ID="lblPaciente" runat="server" Text="Label"></asp:Label>
+            </div>
+        </div>
+    </div>
+        <asp:GridView ID="grdPaciente" runat="server" CellPadding="5"  
+            CssClass= "table table-striped table-bordered table-condensed"></asp:GridView>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2" >
+                <asp:Label ID="Label3" runat="server" Text="Peso Paciente: "></asp:Label>
+            </div>
+            <div class="col-md-10" >
+                <asp:TextBox ID="txtPeso" runat="server" class="form-control input-lg" Width="160px" Height="3px" required=''></asp:TextBox>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2" >
+                <asp:Label ID="Label4" runat="server" Text="Estado Paciente:"></asp:Label>
+            </div>
+            <div class="col-md-10" >
+                <asp:TextBox ID="txtEstadoPaciente" runat="server" class="form-control input-lg" Width="160px" Height="3px" required=''></asp:TextBox>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <asp:Button class="btn btn-info" ID="btnGenerar" runat="server" Text="Generar " OnClick="btnGenerar_Click" />
+    </div>
+        
+        <asp:Label ID="lblDosisOptimizada" runat="server" Text="Label"></asp:Label>
+       
+        <asp:GridView ID="grdHojaPreparacion" runat="server" CellPadding="5"  
+            CssClass= "table table-striped table-bordered table-condensed">
+        </asp:GridView>
+       
+    
+    
     </form>
 
     </div>
