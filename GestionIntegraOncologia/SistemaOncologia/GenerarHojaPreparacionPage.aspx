@@ -11,18 +11,28 @@
     <title>Generacion de hoja de Preparacion</title>
 </head>
 <body>
+    <div class="form-group" style="margin-left:60px">
+       <div class="row">
+            <div class="col-md-2" >
+                <img src="http://logosenvector.com/logo/img/clinica-ricardo-palma-223.jpg" alt="Logo CLinica"width=100 height=100 />
+            </div>
+            <div class="col-md-10" >
+                <h1 style="">Generar Hoja de preparación</h1>
+            </div>
+        </div>
+    </div>
     <div class="jumbotron" style="margin-left:60px"  >
         <div class="">
             <form id="form1" runat="server">
-            <h2 class="text-center"><asp:Label ID="Label1" runat="server" Text="Buscar Paciente:"></asp:Label></h2>
+            <h2 class="text-left"><asp:Label ID="Label1" runat="server" Text="Buscar Paciente:"></asp:Label></h2>
         </div>
     <div class="form-group">
        <div class="row">
             <div class="col-md-2" >
-                <asp:Label ID="Label2" runat="server" Text="DNI Paciente:"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="DNI Paciente:" style="font-size=13px"></asp:Label>
             </div>
         <div class="col-md-2">
-            <asp:TextBox ID="txtDniPaciente" runat="server" class="form-control input-lg" Width="160px" Height="3px" required='' type='number'></asp:TextBox>
+            <asp:TextBox ID="txtDniPaciente" runat="server" class="form-control input-lg" Width="160px" Height="7px" required='' type='number'></asp:TextBox>
         </div>
         <div class="col-md-7">
             <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Buscar"  />
@@ -32,7 +42,7 @@
     <div class="form-group">
         <div class="row">
             <div class="col-md-12" >
-                <asp:Label ID="lblPaciente" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblPaciente" runat="server" Text=""></asp:Label>
             </div>
         </div>
     </div>
@@ -44,7 +54,7 @@
                 <asp:Label ID="Label3" runat="server" Text="Peso Paciente: "></asp:Label>
             </div>
             <div class="col-md-10" >
-                <asp:TextBox ID="txtPeso" runat="server" class="form-control input-lg" Width="160px" Height="3px" required=''></asp:TextBox>
+                <asp:TextBox ID="txtPeso" runat="server" class="form-control input-lg" Width="160px" Height="3px" ></asp:TextBox>
             </div>
         </div>
     </div>
@@ -54,7 +64,7 @@
                 <asp:Label ID="Label4" runat="server" Text="Estado Paciente:"></asp:Label>
             </div>
             <div class="col-md-10" >
-                <asp:TextBox ID="txtEstadoPaciente" runat="server" class="form-control input-lg" Width="160px" Height="3px" required=''></asp:TextBox>
+                <asp:TextBox ID="txtEstadoPaciente" runat="server" class="form-control input-lg" Width="160px" Height="3px" ></asp:TextBox>
             </div>
         </div>
     </div>
@@ -62,13 +72,15 @@
         <asp:Button class="btn btn-info" ID="btnGenerar" runat="server" Text="Generar " OnClick="btnGenerar_Click" />
     </div>
         
-        <asp:Label ID="lblDosisOptimizada" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="lblDosisOptimizada" runat="server" Text=""></asp:Label>
        
         <asp:GridView ID="grdHojaPreparacion" runat="server" CellPadding="5"  
             CssClass= "table table-striped table-bordered table-condensed">
         </asp:GridView>
        
-    
+    <footer>
+            <h5>Creado por Grupo 3 - <span>Taller de Proyectos 2 - 2017</span> - Upc Epe Ing. de Sistemas ©</h5>   
+    </footer>
     
     </form>
 

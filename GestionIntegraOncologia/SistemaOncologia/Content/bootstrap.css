@@ -10,7 +10,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  margin: 10px;
 }
 article,
 aside,
@@ -315,6 +315,7 @@ th {
 .glyphicon-star:before {
   content: "\e006";
 }
+
 .glyphicon-star-empty:before {
   content: "\e007";
 }
