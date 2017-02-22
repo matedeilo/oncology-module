@@ -10,6 +10,6 @@ namespace Modelo
     {
         public int IDMaterial { get; set; }
         public int IDPreparado { get; set; }
-        public int Dosis { get; set; }
+        public double Dosis { get; set; }
     }
 }

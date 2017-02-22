@@ -119,7 +119,7 @@ Peso float NOT NULL
 CREATE TABLE MaterialxPreparado(
 IDMaterial int  NOT NULL,
 IDPreparado int  NOT NULL,
-Dosis int NOT NULL
+Dosis float NOT NULL
 )
 
 --Creacion de la tabla OrdenTransporte

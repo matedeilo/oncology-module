@@ -207,6 +207,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="GenerarOrdendeTransporte.aspx" />
     <Content Include="GenerarHojaPreparacionPage.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -277,6 +278,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarOrdendeTransporte.aspx.cs">
+      <DependentUpon>GenerarOrdendeTransporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenerarOrdendeTransporte.aspx.designer.cs">
+      <DependentUpon>GenerarOrdendeTransporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="GenerarHojaPreparacionPage.aspx.cs">
       <DependentUpon>GenerarHojaPreparacionPage.aspx</DependentUpon>

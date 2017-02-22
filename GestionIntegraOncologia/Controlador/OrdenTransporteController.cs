@@ -36,6 +36,8 @@ namespace Controlador
             objOrdenTransporte.UpdateOrdenTransporte(objC);
         }
 
+       
+
     }
 }
 

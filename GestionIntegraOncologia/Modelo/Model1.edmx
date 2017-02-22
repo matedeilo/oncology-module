@@ -134,7 +134,7 @@
           </Key>
           <Property Name="IDMaterial" Type="int" Nullable="false" />
           <Property Name="IDPreparado" Type="int" Nullable="false" />
-          <Property Name="Dosis" Type="int" Nullable="false" />
+          <Property Name="Dosis" Type="float" Nullable="false" />
         </EntityType>
         <EntityType Name="OrdenTransporte">
           <Key>
@@ -695,7 +695,7 @@
           </Key>
           <Property Name="IDMaterial" Type="Int32" Nullable="false" />
           <Property Name="IDPreparado" Type="Int32" Nullable="false" />
-          <Property Name="Dosis" Type="Int32" Nullable="false" />
+          <Property Name="Dosis" Type="Double" Nullable="false" />
           <NavigationProperty Name="Material" Relationship="Self.fk_MaterialxPreparado1" FromRole="MaterialxPreparado" ToRole="Material" />
           <NavigationProperty Name="Preparado" Relationship="Self.fk_MaterialxPreparado2" FromRole="MaterialxPreparado" ToRole="Preparado" />
         </EntityType>

@@ -18,5 +18,10 @@ namespace SistemaOncologia
         {
             Response.Redirect("GenerarHojaPreparacionPage.aspx");
         }
+
+        protected void btnGenerarOrdenTransporte_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GenerarOrdendeTransporte.aspx");
+        }
     }
 }

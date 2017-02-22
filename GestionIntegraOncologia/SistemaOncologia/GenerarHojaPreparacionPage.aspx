@@ -75,7 +75,7 @@
                 <asp:Label ID="Label4" runat="server" Text="Estado Paciente:"></asp:Label>
             </div>
             <div class="col-md-10" >
-                <asp:DropDownList ID="DropDownList1" runat="server" CssClass AutoPostBack="True" Enabled="true" EnableViewState="False">
+                <asp:DropDownList ID="ddlEstado" runat="server" CssClass AutoPostBack="True" Enabled="true" EnableViewState="False">
                     <asp:ListItem>Optimo</asp:ListItem>
                     <asp:ListItem>Muy Bueno</asp:ListItem>
                     <asp:ListItem>Bueno</asp:ListItem>

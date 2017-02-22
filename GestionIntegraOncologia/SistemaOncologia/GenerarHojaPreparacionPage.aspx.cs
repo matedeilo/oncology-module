@@ -29,18 +29,26 @@ namespace SistemaOncologia
             try
             {
                 log.Info("Iniciando Busqueda");
-                 int dni = Int32.Parse(txtDniPaciente.Text);
-                paciente = pacienteController.FindbyID(dni);
-                lblPaciente.Text = paciente.Nombre + " " + paciente.ApellidoPaterno + " " + paciente.ApellidoMaterno;
+                int dni = Int32.Parse(txtDniPaciente.Text);
+                if (pacienteController.pacienteExiste(dni))
+                {
+                    paciente = pacienteController.FindbyID(dni);
+                    lblPaciente.Text = paciente.Nombre + " " + paciente.ApellidoPaterno + " " + paciente.ApellidoMaterno;
 
-                DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Nombre", typeof(string)),
+                    DataTable dt = new DataTable();
+                    dt.Columns.AddRange(new DataColumn[4] { new DataColumn("Nombre", typeof(string)),
                             new DataColumn("Apellidos", typeof(string)),
                             new DataColumn("Peso",typeof(float)),
                             new DataColumn("Edad",typeof(int))});
-                dt.Rows.Add(paciente.Nombre,paciente.ApellidoPaterno+" "+paciente.ApellidoMaterno, paciente.Peso,paciente.Edad);
-                grdPaciente.DataSource = dt;
-                grdPaciente.DataBind();
+                    dt.Rows.Add(paciente.Nombre, paciente.ApellidoPaterno + " " + paciente.ApellidoMaterno, paciente.Peso, paciente.Edad);
+                    grdPaciente.DataSource = dt;
+                    grdPaciente.DataBind();
+                } else
+                {
+                    lblPaciente.Text = "No se encontro al paciente";
+                }
+              
+
            
             }
             catch (Exception ex)
@@ -56,8 +64,8 @@ namespace SistemaOncologia
             int dni = Int32.Parse(txtDniPaciente.Text);
             paciente = pacienteController.FindbyID(dni);
             int edad = paciente.Edad;
-            double peso;
-            String estado = DropDownList1.Text.ToString();
+            double peso=0.0;
+            String estado = ddlEstado.SelectedValue;
             //String estado = txtEstadoPaciente.Text.ToString();
             int idPaciente = paciente.IDPaciente;
             if (txtPeso.Text == "")

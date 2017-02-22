@@ -30,5 +30,11 @@ namespace Controlador
         {
             objPaciente.UpdatePaciente(objC);
         }
+
+        public bool pacienteExiste(int dni)
+        {
+            bool existe = objPaciente.pacienteExiste(dni);
+            return existe;
+        }
     }
 }

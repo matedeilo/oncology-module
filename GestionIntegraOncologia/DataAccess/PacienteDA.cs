@@ -50,6 +50,15 @@ namespace DataAccess
             }
             return objc;
         }
+        public bool pacienteExiste(int dni)
+        {
+            bool existe = true;
+            using (OncologiaEntities contex = new OncologiaEntities())
+            {
+                existe = contex.Paciente.Any(c => c.DNI == dni);
+            }
+            return existe;
+        }
         public void CreatePaciente(Paciente objC)
         {
             using (OncologiaEntities contex = new OncologiaEntities())

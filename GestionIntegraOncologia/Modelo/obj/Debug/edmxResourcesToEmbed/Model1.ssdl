@@ -129,7 +129,7 @@
     </Key>
     <Property Name="IDMaterial" Type="int" Nullable="false" />
     <Property Name="IDPreparado" Type="int" Nullable="false" />
-    <Property Name="Dosis" Type="int" Nullable="false" />
+    <Property Name="Dosis" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="OrdenTransporte">
     <Key>

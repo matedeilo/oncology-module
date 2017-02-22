@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0ad459eeea824c20820cd50db4a98ad8" Name="Diagram1">
+      <Diagram DiagramId="7ae3441798a748c4b9ff3f182cdc1a34" Name="Diagram1">
         <EntityTypeShape EntityType="OncologiaModel.Contenedor" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="OncologiaModel.ContenedorXOrdenTransporte" Width="1.5" PointX="12" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="OncologiaModel.DetalleFichaTratamiento" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />

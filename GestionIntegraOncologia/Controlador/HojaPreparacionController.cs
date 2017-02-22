@@ -63,7 +63,7 @@ log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().Dec
                 {
                     foreach (MaterialxPreparado materialxPreparado2 in materialxpreparado)
                     {
-                        materialxPreparado2.Dosis = Convert.ToInt32(gradoToxicidadPermitido * materialxPreparado2.Dosis);
+                        materialxPreparado2.Dosis = gradoToxicidadPermitido * materialxPreparado2.Dosis;
                         materialxpreparadoOptimizado.Add(materialxPreparado2);
                         listaDosisOptimizada.Add(materialxPreparado2.Dosis + "");
                     }
@@ -237,11 +237,11 @@ log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().Dec
             {
                 indice = 2.1;
             }
-            else if (peso >= 86 && peso <= 90)
+            else if (peso >= 86 && peso <= 91)
             {
                 indice = 3;
             }
-            else if (peso >= 92 )
+            else if (peso >91 )
             {
                 indice = 3.5;
             }
