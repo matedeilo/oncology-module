@@ -56,9 +56,18 @@ namespace SistemaOncologia
             int dni = Int32.Parse(txtDniPaciente.Text);
             paciente = pacienteController.FindbyID(dni);
             int edad = paciente.Edad;
-            double peso = Convert.ToDouble(txtPeso.Text);
-            String estado = txtEstadoPaciente.Text.ToString();
+            double peso;
+            String estado = DropDownList1.Text.ToString();
+            //String estado = txtEstadoPaciente.Text.ToString();
             int idPaciente = paciente.IDPaciente;
+            if (txtPeso.Text == "")
+            {
+                peso = paciente.Peso;
+            }
+            else
+            {
+                peso = Convert.ToDouble(txtPeso.Text);
+            }
             List<Preparado> listaPreparado = hojaPreparacionController.getPreparados(edad, peso, estado, idPaciente);
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[4] {new DataColumn("Preparado", typeof(string)),

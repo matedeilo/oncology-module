@@ -63,3 +63,16 @@ G:\Proyecto TP 2\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.x
 G:\Proyecto TP 2\GestionIntegraOncologia\Controlador\obj\Debug\Controller.csprojResolveAssemblyReference.cache
 G:\Proyecto TP 2\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.dll
 G:\Proyecto TP 2\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.pdb
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.dll
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.pdb
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.dll
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\log4net.dll
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.dll
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.dll
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.pdb
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.pdb
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\log4net.xml
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.xml
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\obj\Debug\Controller.csprojResolveAssemblyReference.cache
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.dll
+C:\Users\u201400194\Source\Repos\oncology-module8\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.pdb
