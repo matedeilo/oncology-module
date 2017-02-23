@@ -142,6 +142,8 @@
           <ScalarProperty Name="NumeroContenedores" ColumnName="NumeroContenedores" />
           <ScalarProperty Name="Comentario" ColumnName="Comentario" />
           <ScalarProperty Name="IDEmpresa" ColumnName="IDEmpresa" />
+          <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -140,6 +140,8 @@
     <Property Name="NumeroContenedores" Type="int" Nullable="false" />
     <Property Name="Comentario" Type="varchar" MaxLength="50" />
     <Property Name="IDEmpresa" Type="int" Nullable="false" />
+    <Property Name="NombreEmpresa" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Paciente">
     <Key>

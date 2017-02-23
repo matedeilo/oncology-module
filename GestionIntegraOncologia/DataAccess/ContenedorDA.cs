@@ -25,7 +25,9 @@ namespace DataAccess
                     EstadoContenedor = c.EstadoContenedor,
                     IDCFichaTratamiento = c.IDFichaTratamiento
                 }).ToList();
+                listadoContenedores = listadoContenedores.Where(c=> c.EstadoContenedor.Equals("Nuevo")).ToList();
             }
+            
             return listadoContenedores;
         }
         public void DeleteCotenedor(int id)

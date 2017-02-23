@@ -22,7 +22,9 @@ namespace DataAccess
                     FechaTransporte = c.FechaTransporte,
                     NumeroContenedores = c.NumeroContenedores,
                     Comentario = c.Comentario,
-                    IDEmpresa = c.IDEmpresa
+                    IDEmpresa = c.IDEmpresa,
+                    nombreEmpresa = c.NombreEmpresa,
+                    estado = c.Estado
                 }).ToList();
             }
             return listadoOrdenesTransporte;

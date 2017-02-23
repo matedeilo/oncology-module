@@ -128,7 +128,9 @@ IDOrdenTransporte int IDENTITY(1,1) NOT NULL,
 FechaTransporte Datetime  NOT NULL,
 NumeroContenedores int  NOT NULL,
 Comentario VARCHAR(50), 
-IDEmpresa int NOT NULL
+IDEmpresa int NOT NULL,
+NombreEmpresa VARCHAR(200) NOT NULL,
+Estado VARCHAR(50) NOT NULL
 )
 
 --Creacion de la tabla ContenedorXOrdenTransporte

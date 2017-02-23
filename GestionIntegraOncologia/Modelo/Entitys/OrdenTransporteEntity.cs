@@ -13,5 +13,7 @@ namespace Modelo
         public int NumeroContenedores { get; set; }
         public String Comentario { get; set; }
         public int IDEmpresa { get; set; }
+        public string nombreEmpresa { get; set; }
+        public string estado { get; set; }
     }
 }

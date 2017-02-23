@@ -26,7 +26,7 @@
         <asp:GridView ID="grdContenedores" runat="server">
         </asp:GridView>
         <br />
-        <asp:Button ID="btnGenerarOrden" runat="server" Text="Generar Orden de Transporte" />
+        <asp:Button ID="btnGenerarOrden" runat="server" Text="Generar Orden de Transporte" OnClick="btnGenerarOrden_Click" />
         <br />
         <br />
         <br />

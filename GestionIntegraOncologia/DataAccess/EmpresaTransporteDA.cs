@@ -15,6 +15,8 @@ namespace DataAccess
         public List<EmpresaTransporteEntity> GetEmpresasTransporte()
         {
             List<EmpresaTransporteEntity> listadoEmpresasTransporte = new List<EmpresaTransporteEntity>();
+            List<EmpresaTransporteEntity> listadoEmpresasTransporteRankeada = new List<EmpresaTransporteEntity>();
+            DateTime fechaActual = DateTime.Now;
             using (OncologiaEntities context = new OncologiaEntities())
             {
                 listadoEmpresasTransporte = context.EmpresaTransporte.Select(c => new EmpresaTransporteEntity()
@@ -23,12 +25,21 @@ namespace DataAccess
                     Nombre = c.Nombre,
                     Telefono = c.Telefono,
                     RUC = c.RUC,
-                    NroObservaciones = c.NroObservaciones
-                    //FechaInicioActividades = c.FechaInicioActividades,
-                    //CostoViaje = c.CostoViaje
+                    NroObservaciones = c.NroObservaciones,
+                    FechaInicioActividades = c.FechaInicioActividades,
+                    CostoViaje = c.CostoViaje,
                 }).ToList();
+                foreach (EmpresaTransporteEntity empresa in listadoEmpresasTransporte)
+                {
+                    empresa.NroObservacionesxCostoxAño = (fechaActual.Subtract(empresa.FechaInicioActividades).Days * empresa.CostoViaje) / (empresa.NroObservaciones * 365);
+                    empresa.NroObservacionesxCostoxAño = Math.Round(empresa.NroObservacionesxCostoxAño,2);
+                }
+
+                listadoEmpresasTransporteRankeada= listadoEmpresasTransporte.OrderBy(c => c.NroObservacionesxCostoxAño).ToList();
+
+
             }
-            return listadoEmpresasTransporte;
+            return listadoEmpresasTransporteRankeada;
         }
         public void DeleteEmpresaTransporte(int id)
         {

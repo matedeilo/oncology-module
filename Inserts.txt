@@ -112,3 +112,49 @@ VALUES (GETDATE(),'Generada','23','1');
 
 INSERT INTO DetalleFichaTratamiento(Observaciones,FechaSesion,NroSesion,EstadoPaciente,IDFichaTratamiento,IDGuiaContingencia,IDProtocolo)
 VALUES ('No hay Observaciones',GETDATE(),'1','Bueno','1','1','1');
+
+
+INSERT INTO EmpresaTransporte(Nombre,Telefono,RUC,NroObservaciones,FechaInicioActividades,CostoViaje)
+VALUES ('La gaviota SAC','2948571','1000000','34','2017-07-01 16:24:57.517','228.24');
+
+INSERT INTO EmpresaTransporte(Nombre,Telefono,RUC,NroObservaciones,FechaInicioActividades,CostoViaje)
+VALUES ('STR Logistic SAC','2944561','1000001','14','2011-03-12 16:24:57.517','278.46');
+
+INSERT INTO EmpresaTransporte(Nombre,Telefono,RUC,NroObservaciones,FechaInicioActividades,CostoViaje)
+VALUES ('Green Care SAC','2947761','1000003','120','2001-03-15 16:24:57.517','201.76');
+
+
+INSERT INTO EmpresaTransporte(Nombre,Telefono,RUC,NroObservaciones,FechaInicioActividades,CostoViaje)
+VALUES ('Ampco Perú SAC','2947778','1000044','4','2015-05-21 16:24:57.517','287.96');
+
+
+INSERT INTO Contenedor(FechaSalida,Observacion,EstadoContenedor,IDFichaTratamiento)
+VALUES (GETDATE(),'Ninguna','Nuevo','1');
+
+
+INSERT INTO Contenedor(FechaSalida,Observacion,EstadoContenedor,IDFichaTratamiento)
+VALUES (GETDATE(),'Ninguna','Nuevo','1');
+
+
+INSERT INTO Contenedor(FechaSalida,Observacion,EstadoContenedor,IDFichaTratamiento)
+VALUES (GETDATE(),'Ninguna','Nuevo','1');
+
+
+INSERT INTO Contenedor(FechaSalida,Observacion,EstadoContenedor,IDFichaTratamiento)
+VALUES (GETDATE(),'Ninguna','Nuevo','1');
+
+
+INSERT INTO Contenedor(FechaSalida,Observacion,EstadoContenedor,IDFichaTratamiento)
+VALUES (GETDATE(),'Ninguna','Nuevo','1');
+
+
+INSERT INTO Contenedor(FechaSalida,Observacion,EstadoContenedor,IDFichaTratamiento)
+VALUES (GETDATE(),'Ninguna','Despachado','1');
+
+
+INSERT INTO Contenedor(FechaSalida,Observacion,EstadoContenedor,IDFichaTratamiento)
+VALUES (GETDATE(),'Ninguna','Despachado','1');
+
+
+INSERT INTO Contenedor(FechaSalida,Observacion,EstadoContenedor,IDFichaTratamiento)
+VALUES (GETDATE(),'Ninguna','Despachado','1');

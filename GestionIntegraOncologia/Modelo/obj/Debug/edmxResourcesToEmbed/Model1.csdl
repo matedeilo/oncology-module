@@ -160,6 +160,8 @@
     <Property Name="NumeroContenedores" Type="Int32" Nullable="false" />
     <Property Name="Comentario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="IDEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="NombreEmpresa" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="ContenedorXOrdenTransporte" Relationship="Self.fk_ContenedorXOrdenTransporte1" FromRole="OrdenTransporte" ToRole="ContenedorXOrdenTransporte" />
     <NavigationProperty Name="EmpresaTransporte" Relationship="Self.fk_OrdTransEmpr" FromRole="OrdenTransporte" ToRole="EmpresaTransporte" />
   </EntityType>

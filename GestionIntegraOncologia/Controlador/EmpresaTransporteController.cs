@@ -17,14 +17,9 @@ namespace Controlador
             objEmpresaTransporte = new EmpresaTransporteDA();
         }
 
-        public void listarEmpresasTransporte()
+        public List<EmpresaTransporteEntity> obtenerListadoEmpresasRankeadas()
         {
-            double ranking = 0.0;
-            List<EmpresaTransporteEntity> listadoEmpresas = objEmpresaTransporte.GetEmpresasTransporte();
-            foreach (EmpresaTransporteEntity empresa in listadoEmpresas)
-            {
-
-            }
+            return objEmpresaTransporte.GetEmpresasTransporte();
         }
     }
 }

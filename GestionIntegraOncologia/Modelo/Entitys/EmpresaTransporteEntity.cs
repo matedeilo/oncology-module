@@ -15,5 +15,7 @@ namespace Modelo
         public int NroObservaciones { get; set; }
         public DateTime FechaInicioActividades { get; set; }
         public double CostoViaje { get; set; }
+
+        public double NroObservacionesxCostoxAño { get; set; }
     }
 }
