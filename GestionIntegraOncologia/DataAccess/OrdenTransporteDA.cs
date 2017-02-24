@@ -55,7 +55,6 @@ namespace DataAccess
             {
                 contex.OrdenTransporte.Add(objC);
                 contex.SaveChanges();
-                contex.Entry(contex.OrdenTransporte).Reload();
             }
         }
         public void UpdateOrdenTransporte(OrdenTransporte objC)

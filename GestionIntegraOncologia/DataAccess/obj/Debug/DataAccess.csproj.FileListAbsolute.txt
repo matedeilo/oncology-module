@@ -68,3 +68,13 @@ C:\Users\JuanJosé\Desktop\Proyecto TP2\GestionIntegraOncologia\DataAccess\bin\D
 C:\Users\JuanJosé\Desktop\Proyecto TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\JuanJosé\Desktop\Proyecto TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\JuanJosé\Desktop\Proyecto TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.pdb
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\bin\Debug\DataAccess.dll.config
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\bin\Debug\DataAccess.dll
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\bin\Debug\DataAccess.pdb
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\bin\Debug\EntityFramework.dll
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\bin\Debug\Modelo.dll
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\bin\Debug\Modelo.pdb
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\bin\Debug\EntityFramework.xml
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.dll
+G:\Proyecto TP2\GestionIntegraOncologia\DataAccess\obj\Debug\DataAccess.pdb

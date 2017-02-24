@@ -21,5 +21,10 @@ namespace Controlador
         {
             return objEmpresaTransporte.GetEmpresasTransporte();
         }
+
+        public EmpresaTransporte findByNombre(string nombre)
+        {
+           return objEmpresaTransporte.FindbyNombre(nombre);
+        }
     }
 }

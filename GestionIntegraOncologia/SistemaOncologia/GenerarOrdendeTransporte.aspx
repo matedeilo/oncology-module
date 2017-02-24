@@ -11,19 +11,29 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:GridView ID="grdEmpresaTransporte" runat="server">
+        <asp:GridView ID="grdEmpresaTransporte" runat="server" OnRowCommand="grdEmpresaTransporte_RowCommand">
+            <Columns>
+                <asp:CommandField HeaderText="Select" ShowHeader="True" ShowSelectButton="True" />
+            </Columns>
         </asp:GridView>
         <br />
         <br />
-        <asp:Label ID="Label1" runat="server" Text="Comentario"></asp:Label>
+        <asp:Label ID="lblcomentario" runat="server" Text="Comentario" Visible="False"></asp:Label>
         <br />
-        <asp:TextBox ID="txtSustento" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtSustento" runat="server" Visible="False"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="btnContenedores" runat="server" OnClick="btnContenedores_Click" Text="Añadir Contenedores" />
         <br />
         <br />
         <asp:GridView ID="grdContenedores" runat="server">
+            <Columns>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:CheckBox ID="chkCtrl" runat="server" />
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
         </asp:GridView>
         <br />
         <asp:Button ID="btnGenerarOrden" runat="server" Text="Generar Orden de Transporte" OnClick="btnGenerarOrden_Click" />

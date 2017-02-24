@@ -61,6 +61,16 @@ namespace DataAccess
             }
             return objc;
         }
+
+        public EmpresaTransporte FindbyNombre(string nombre)
+        {
+            EmpresaTransporte objc = null;
+            using (OncologiaEntities contex = new OncologiaEntities())
+            {
+                objc = contex.EmpresaTransporte.First(c => c.Nombre == nombre);
+            }
+            return objc;
+        }
         public void CreateEmpresaTransporte(EmpresaTransporte objC)
         {
             using (OncologiaEntities contex = new OncologiaEntities())
