@@ -11,49 +11,34 @@
     <title>Generacion de hoja de Preparacion</title>
 </head>
 <body>
-       <div class="jumbotron">
-          <h1>Sistema Integral Oncologico Clinica Ricardo Palma</h1>
-        </div>
-    <nav class="navbar navbar-default" role="navigation">
-      
-    </nav>
+    <div class="jumbotron">
+        <h1>Sistema Integral Oncologico Clinica Ricardo Palma</h1>
+    </div>
+    
     <div class="container">
-  
+        <div class="page-header">
+            <h1>Opciones</h1>
+        </div>
+        <p>
+            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Generar Hoja de Preparacion"  />
 
-          <div class="container">
-
-             <div class="row">
-            <div class="box">
-                <div class="col-lg-12">
-                      <div class="form-group" style="margin-left:60px">
+            <asp:Button ID="btnGenerarOrdenTransporte" runat="server" OnClick="btnGenerarOrdenTransporte_Click" Text="Generar Orden de Transporte" />
+        </p>
     </div>
     <div class="jumbotron" style="margin-left:60px"  >
         <div class="">
             <form id="form1" runat="server">
             <h2 class="text-left">&nbsp;</h2>
         </div>
-    <div class="form-group">
-       <div class="row">
-        <div class="col-md-7">
-            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Generar Hoja de Preparacion"  />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnGenerarOrdenTransporte" runat="server" OnClick="btnGenerarOrdenTransporte_Click" Text="Generar Orden de Transporte" />
-        </div>
-           </div>
-    </div>
-    <div class="form-group">
-        <div class="row">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="row">
-        </div>
-    </div>
-    <div class="form-group">
-    </div>
-        
+    
+        <div class="form-group">
+            <div class="row">
             </div>
         </div>
+        <div class="form-group">
+            <div class="row">
+            </div>
+        </div>   
 
     </div>
        
@@ -66,9 +51,5 @@
             </div>
         </div>
     </footer>
-    
-    </form>
-
-    </div>
 </body>
 </html>
