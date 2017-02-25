@@ -11,6 +11,7 @@
     <title>Generacion de hoja de Preparacion</title>
 </head>
 <body>
+   <form id="form2" runat="server">
        <div class="jumbotron">
           <h1>Sistema Integral Oncologico Clinica Ricardo Palma</h1>
         </div>
@@ -34,7 +35,6 @@
     </div>
     <div class="jumbotron" style="margin-left:60px"  >
         <div class="">
-            <form id="form1" runat="server">
             <h2 class="text-left"><asp:Label ID="Label1" runat="server" Text="Buscar Paciente:"></asp:Label></h2>
         </div>
     <div class="form-group">
@@ -46,7 +46,7 @@
             <asp:TextBox ID="txtDniPaciente" runat="server" class="form-control input-lg" Width="160px" Height="7px" required='' type='number'></asp:TextBox>
         </div>
         <div class="col-md-7">
-            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Buscar"  />
+            <asp:Button runat="server"  Cssclass="btn btn-info" BorderStyle="Double" ID="btnBuscarPaciente" OnClick="btnBuscarPaciente_Click" Text="Buscar"  />
         </div>
            </div>
     </div>
@@ -109,8 +109,7 @@
         </div>
     </footer>
     
-    </form>
+ </form>
 
-    </div>
 </body>
 </html>

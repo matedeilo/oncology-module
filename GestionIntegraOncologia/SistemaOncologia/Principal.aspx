@@ -11,6 +11,7 @@
     <title>Generacion de hoja de Preparacion</title>
 </head>
 <body>
+       <form id="form1" runat="server">
     <div class="jumbotron">
         <h1>Sistema Integral Oncologico Clinica Ricardo Palma</h1>
     </div>
@@ -20,14 +21,13 @@
             <h1>Opciones</h1>
         </div>
         <p>
-            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnBuscarPaciente" runat="server" OnClick="btnBuscarPaciente_Click" Text="Generar Hoja de Preparacion"  />
+            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnGenerarHojaPreparacion" runat="server" OnClick="btnBuscarPaciente_Click" Text="Generar Hoja de Preparacion"  />
 
             <asp:Button ID="btnGenerarOrdenTransporte" runat="server" OnClick="btnGenerarOrdenTransporte_Click" Text="Generar Orden de Transporte" />
         </p>
     </div>
     <div class="jumbotron" style="margin-left:60px"  >
         <div class="">
-            <form id="form1" runat="server">
             <h2 class="text-left">&nbsp;</h2>
         </div>
     
@@ -51,5 +51,6 @@
             </div>
         </div>
     </footer>
+           </form>
 </body>
 </html>
