@@ -68,7 +68,9 @@ log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().Dec
                         listaDosisOptimizada.Add(materialxPreparado2.Dosis + "");
                     }
                 }
-            }catch (Exception ex)
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<Script>alert('El numero de contenedores es mayor a 4');</Script>");
+            }
+            catch (Exception ex)
             {
                 log.Info("Excepcion: "+ex);
             }

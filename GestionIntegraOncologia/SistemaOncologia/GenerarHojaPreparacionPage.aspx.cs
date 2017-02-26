@@ -103,6 +103,7 @@ namespace SistemaOncologia
             hojaPreparación.EstadoHoja = "Pendiente";
             hojaPreparación.FechaPreparacion = now;
             hojaPreparacionController.CreateHojaPreparacion(hojaPreparación);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<Script>alert('La Hoja de Preparacion se genero con exito');</Script>");
         }
     }
 }

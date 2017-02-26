@@ -18,7 +18,9 @@ namespace SistemaOncologia
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[5] {new DataColumn("Ranking", typeof(int)),
+            dt.Columns.AddRange(new DataColumn[5] 
+                            {
+                            new DataColumn("Ranking", typeof(int)),
                             new DataColumn("Nombre", typeof(string)),
                             new DataColumn("RUC", typeof(int)),
                             new DataColumn("Telefono", typeof(int)),
@@ -62,24 +64,39 @@ namespace SistemaOncologia
                     }
                 }
             }
-            empresaTransporte = getEmpresa();
-            DateTime fecha = DateTime.Now;
-            OrdenTransporte ordenTransporte = new OrdenTransporte();
-            ordenTransporte.FechaTransporte = fecha;
-            ordenTransporte.NumeroContenedores = numeroContenedores;
-            ordenTransporte.IDEmpresa = empresaTransporte.IDEmpresa;
-            ordenTransporte.NombreEmpresa = empresaTransporte.Nombre;
-            ordenTransporte.Estado = "Registrado";
-            ordenTransporte.Comentario =txtSustento.Text;
-            ordenTransporteController.CreateOrdenTransporte(ordenTransporte);
-            DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[4] {new DataColumn("Nombre Empresa Transporte", typeof(string)),
+            if (numeroContenedores > 10)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<Script>alert('El numero de contenedores es mayor a 10');</Script>");
+                
+            }
+            else
+            {
+                if (numeroContenedores < 4)
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "Scripts", "<Script>alert('El numero de contenedores es menor a 4');</Script>");
+                }
+                else
+                { 
+                empresaTransporte = getEmpresa();
+                DateTime fecha = DateTime.Now;
+                OrdenTransporte ordenTransporte = new OrdenTransporte();
+                ordenTransporte.FechaTransporte = fecha;
+                ordenTransporte.NumeroContenedores = numeroContenedores;
+                ordenTransporte.IDEmpresa = empresaTransporte.IDEmpresa;
+                ordenTransporte.NombreEmpresa = empresaTransporte.Nombre;
+                ordenTransporte.Estado = "Registrado";
+                ordenTransporte.Comentario = txtSustento.Text;
+                ordenTransporteController.CreateOrdenTransporte(ordenTransporte);
+                DataTable dt = new DataTable();
+                dt.Columns.AddRange(new DataColumn[4] {new DataColumn("Nombre Empresa Transporte", typeof(string)),
                             new DataColumn("Fecha Transporte", typeof(DateTime)),
                             new DataColumn("Numero Contenedores", typeof(int)),
                             new DataColumn("Estado Orden", typeof(string))});
-                dt.Rows.Add(ordenTransporte.NombreEmpresa, ordenTransporte.FechaTransporte,ordenTransporte.NumeroContenedores,ordenTransporte.Estado);
+                dt.Rows.Add(ordenTransporte.NombreEmpresa, ordenTransporte.FechaTransporte, ordenTransporte.NumeroContenedores, ordenTransporte.Estado);
                 grdOrdenTransporte.DataSource = dt;
                 grdOrdenTransporte.DataBind();
+                }
+            }
         }
 
         protected void grdEmpresaTransporte_RowCommand(object sender, GridViewCommandEventArgs e)

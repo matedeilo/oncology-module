@@ -115,3 +115,16 @@ G:\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.xm
 G:\Proyecto TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controller.csprojResolveAssemblyReference.cache
 G:\Proyecto TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.dll
 G:\Proyecto TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.pdb
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\Controlador.pdb
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\log4net.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\DataAccess.pdb
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\Modelo.pdb
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\log4net.xml
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\bin\Debug\EntityFramework.xml
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controller.csprojResolveAssemblyReference.cache
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Controlador\obj\Debug\Controlador.pdb

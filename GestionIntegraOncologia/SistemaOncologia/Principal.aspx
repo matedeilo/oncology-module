@@ -22,24 +22,9 @@
         </div>
         <p>
             <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnGenerarHojaPreparacion" runat="server" OnClick="btnBuscarPaciente_Click" Text="Generar Hoja de Preparacion"  />
-
-            <asp:Button ID="btnGenerarOrdenTransporte" runat="server" OnClick="btnGenerarOrdenTransporte_Click" Text="Generar Orden de Transporte" />
+           
+            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnGenerarOrdenTransporte" runat="server" OnClick="btnGenerarOrdenTransporte_Click" Text="Generar Orden de Transporte" /> 
         </p>
-    </div>
-    <div class="jumbotron" style="margin-left:60px"  >
-        <div class="">
-            <h2 class="text-left">&nbsp;</h2>
-        </div>
-    
-        <div class="form-group">
-            <div class="row">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="row">
-            </div>
-        </div>   
-
     </div>
        
       <footer>

@@ -62,3 +62,11 @@ G:\Proyecto TP2\GestionIntegraOncologia\Modelo\bin\Debug\EntityFramework.xml
 G:\Proyecto TP2\GestionIntegraOncologia\Modelo\obj\Debug\Model.csprojResolveAssemblyReference.cache
 G:\Proyecto TP2\GestionIntegraOncologia\Modelo\obj\Debug\Modelo.dll
 G:\Proyecto TP2\GestionIntegraOncologia\Modelo\obj\Debug\Modelo.pdb
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Modelo\bin\Debug\Modelo.dll.config
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Modelo\bin\Debug\Modelo.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Modelo\bin\Debug\Modelo.pdb
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Modelo\bin\Debug\EntityFramework.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Modelo\bin\Debug\EntityFramework.xml
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Modelo\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Modelo\obj\Debug\Modelo.dll
+C:\Users\u201400194\Desktop\Proyecto TP2\GestionIntegraOncologia\Modelo\obj\Debug\Modelo.pdb
