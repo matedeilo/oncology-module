@@ -26,6 +26,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Hoja de preparacion</a></li>
             <li><a href="../GenerarOrdendeTransporte.aspx">Orden de transporte</a></li>
+            <li><a href="../ActualizarPreparacionMezclaCitostatica.aspx">Actualizar preparacion de mezcal Citostática</a></li>
           </ul>
         </div>
       </div>

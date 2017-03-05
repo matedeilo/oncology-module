@@ -13,7 +13,15 @@
 <body>
        <form id="form1" runat="server">
     <div class="jumbotron">
-        <h1>Sistema Integral Oncologico Clinica Ricardo Palma</h1>
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2" style="padding-right">
+                <img style="float:right;" src="http://www.crp.com.pe/m/img/logocrp.gif"  height="70px" width="150px"/> 
+            </div>
+            <div style="text-align:center" class="col-lg-10 col-md-10 col-sm-10">
+                <h2>Sistema Integral Oncologico Clinica Ricardo Palma</h2> 
+            </div>
+            
+        </div>
     </div>
     
     <div class="container">
@@ -24,6 +32,10 @@
             <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnGenerarHojaPreparacion" runat="server" OnClick="btnBuscarPaciente_Click" Text="Generar Hoja de Preparacion"  />
            
             <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnGenerarOrdenTransporte" runat="server" OnClick="btnGenerarOrdenTransporte_Click" Text="Generar Orden de Transporte" /> 
+
+            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnActualizarPreparacionMezclaCitostatica" runat="server" OnClick="btnActualizarPreparacionMezclaCitostatica_Click" Text="Actualizar Preparación de Mezclas Citostáticas" /> 
+
+            <asp:Button Cssclass="btn btn-info" BorderStyle="Double" ID="btnActualizaFichaTratamiento" runat="server" OnClick="btnActualizaFichaTratamiento_Click" Text="Actualizar Ficha de Tratamiento" /> 
         </p>
     </div>
        

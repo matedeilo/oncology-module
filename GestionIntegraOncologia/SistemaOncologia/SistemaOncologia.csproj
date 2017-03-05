@@ -188,6 +188,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="ActualizarFichaTratamiento.aspx" />
+    <Content Include="ActualizarPreparacionMezclaCitostatica.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -264,6 +266,20 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarFichaTratamiento.aspx.cs">
+      <DependentUpon>ActualizarFichaTratamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarFichaTratamiento.aspx.designer.cs">
+      <DependentUpon>ActualizarFichaTratamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizarPreparacionMezclaCitostatica.aspx.cs">
+      <DependentUpon>ActualizarPreparacionMezclaCitostatica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarPreparacionMezclaCitostatica.aspx.designer.cs">
+      <DependentUpon>ActualizarPreparacionMezclaCitostatica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

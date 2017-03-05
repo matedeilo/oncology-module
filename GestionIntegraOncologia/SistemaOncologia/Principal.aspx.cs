@@ -23,5 +23,13 @@ namespace SistemaOncologia
         {
             Response.Redirect("GenerarOrdendeTransporte.aspx");
         }
+        protected void btnActualizarPreparacionMezclaCitostatica_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ActualizarPreparacionMezclaCitostatica.aspx");
+        }
+        protected void btnActualizaFichaTratamiento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ActualizarFichaTratamiento.aspx");
+        }
     }
 }
